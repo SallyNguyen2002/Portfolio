@@ -27,7 +27,18 @@
         </nav>
     </header>
 
-    <!--Navigation-->
+    <div class="container">
+        <h2>Having cool ideas for project or wanting to cooperate</h2>
+        <p>or just crash by to say hi</p>
+        <h5>Email</h5>
+        <h5>Phone number</h5>
+        <h5>Social Media</h5>
+        <a href="">Instagram</a><br>
+        <a href="">Facebook</a><br>
+        <a href="">LinkedIn</a>
+    </div>
+
+        <!--Footer-->
     <footer>
         <a href="index"><img src="img/Logo ID.png" alt="a logo of my branding"></a>
         <h3>Just come and say hello
