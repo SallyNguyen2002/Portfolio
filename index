@@ -39,7 +39,33 @@
             </div>
         </section>
     </header>
+        
+        <!--Projects-->
+    <div class="container">
+        <section>
+            <div class="container">
+                <h2>Projects</h2>
+                <p>Some of the significant projects that I designed in the past few years.</p>
+                <a href="Projects">MORE</a>
+                <div class="carousel slide" id="projcarol">
+                    <img src="img/" alt="My Birth Theme Line Art">
+                </div>
+                <p>Here is a link to my <a href="https://www.behance.net/sallynguyen5">Behance</a>.</p>
+            </div>
+        </section>
+    </div>
 
+
+        <!--Contacts-->
+    <div class="container">
+        <section>
+            <h2>Contacts</h2>
+            <a href="Contact">Let’s connect!</a>
+            <p>Whether you’ve got a cool project, a commission idea, an event to chat about,
+                or just want to send some good vibes—slide into my inbox.
+                I’m all ears (and laughs)!</p>
+        </section>
+    </div> 
 
         <!--Footer-->
     <footer>
