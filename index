@@ -25,7 +25,21 @@
                 </ul>
             </div>
         </nav>
+        
+        <!--About-->
+        <section>
+            <div class="container">
+                <h3>Sally Nguyen</h3>
+                <strong>SAIT UX Designer Student</strong>
+                <p>An energetic, ambitious, and outgoing student pursuing a major in User Experience
+                    within the Interactive Design program at SAIT.
+                    I love vibrant experiences, engaging in life eagerly and taking pleasure in
+                    discovering the unknown.</p>
+                <a href="About">MORE ABOUT ME</a>
+            </div>
+        </section>
     </header>
+
 
         <!--Footer-->
     <footer>
