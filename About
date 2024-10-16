@@ -28,7 +28,21 @@
     </header>
 
     <div class="container">
-        
+        <!--About me-->
+        <h2>About Me and My Works</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, aperiam odio.
+            Labore dolores animi repudiandae? Voluptas aliquid dolor eaque dignissimos,
+            repudiandae harum, nam quam asperiores labore hic deleniti, delectus cum.</p>
+
+        <!--Facts-->
+        <h2>Interesting Facts</h2>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
 
         <!--Navigation-->
