@@ -22,6 +22,52 @@
         </nav>
     </header>
 
+    <div class="container">
+        <h1>Projects</h1>
+        <ol>
+        <!--Line Arts-->
+            <h3><li>Line Arts</li></h3>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="https://via.placeholder.com/800x500/FF5733" alt="Slide 1">
+                    <img src="https://via.placeholder.com/800x500/33FF57" alt="Slide 2">
+                    <img src="https://via.placeholder.com/800x500/5733FF" alt="Slide 3">
+                </div>
+            </div>
+
+        <!--Designs-->
+            <h3><li>Designs</li></h3>
+                <div class="carousel">
+                    <div class="carousel-images">
+                        <img src="https://via.placeholder.com/800x500/FF5733" alt="Slide 1">
+                        <img src="https://via.placeholder.com/800x500/33FF57" alt="Slide 2">
+                        <img src="https://via.placeholder.com/800x500/5733FF" alt="Slide 3">
+                    </div>
+                </div>
+
+        <!--3D Models-->
+            <h3><li>3D Models</li></h3>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="https://via.placeholder.com/800x500/FF5733" alt="Slide 1">
+                    <img src="https://via.placeholder.com/800x500/33FF57" alt="Slide 2">
+                    <img src="https://via.placeholder.com/800x500/5733FF" alt="Slide 3">
+                </div>
+            </div>
+
+        <!--Paintings-->
+            <h3><li>Paintings</li></h3>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="https://via.placeholder.com/800x500/FF5733" alt="Slide 1">
+                    <img src="https://via.placeholder.com/800x500/33FF57" alt="Slide 2">
+                    <img src="https://via.placeholder.com/800x500/5733FF" alt="Slide 3">
+                </div>
+            </div>
+        </ol>
+        <p>Here is a link to my <a href="https://www.behance.net/sallynguyen5">Behance</a>.</p>
+    </div>
+
     <!--Footer-->
     <footer>
         <a href="index"><img src="img/Logo ID.png" alt="a logo of my branding"></a>
