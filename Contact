@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/font-awesome/css/all.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            background: #9A3227;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!--Navigation-->
+        <nav>
+            <div class="container">
+                <a href="index"><img src="img/Logo ID.png" alt="a logo of my branding"></a>
+                <ul>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="About">About</a></li>
+                    <li><a href="Projects">Projects</a></li>
+                    <li><a href="Contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!--Navigation-->
+    <footer>
+        <a href="index"><img src="img/Logo ID.png" alt="a logo of my branding"></a>
+        <h3>Just come and say hello
+            <i class="fa-regular fa-face-laugh-wink"></i></h3>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-facebook-messenger"></i></a>
+        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+        <p>&copy; 2024 Sally Nguyen. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
