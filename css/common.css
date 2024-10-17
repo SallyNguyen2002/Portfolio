@@ -1,0 +1,50 @@
+body{
+    background: #FED7B8;
+}
+
+h1, h2, h3, h4 {
+    color: #9A3227;
+
+}
+
+a {
+    color:#9A3227;
+    text-decoration: none;
+}
+
+#nav-bar {
+    display: flex;
+    height: 50px;
+    background-color: red;
+}
+
+nav img{
+    height: 50px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+nav li{
+    justify-content: right;
+}
+
+nav ul a{
+    text-decoration: none;
+    color: black;
+    padding: .5em;
+}
+
+footer {
+    justify-content: center;
+}
+footer a {
+    color: #9A3227;
+    padding: .5em;
+    font-size: 1.2em;
+}
