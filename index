@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
     <title>Index</title>
-    <style>
-        body {
-            background: #9A3227;
-        }
-    </style>
+
 </head>
 <body>
     <header>
         <!--Navigation-->
         <nav>
-            <div class="container">
+            <div class="container" id="nav-bar">
                 <a href="index"><img src="img/Logo ID Red.png" alt="a logo of my branding"></a>
                 <ul>
                     <li><a href="index">Home</a></li>
