@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/font-awesome/css/all.min.css" rel="stylesheet">
-    <title>Document</title>
-    <style>
-        body {
-            background: #9A3227;
-        }
-    </style>
+    <title>About</title>
+ 
 </head>
 <body>
     <header>
         <!--Navigation-->
         <nav>
             <div class="container">
-                <a href="index"><img src="img/Logo ID.png" alt="a logo of my branding"></a>
+                <a href="index"><img src="img/Logo ID Red.png" alt="a logo of my branding"></a>
                 <ul>
                     <li><a href="index">Home</a></li>
                     <li><a href="About">About</a></li>
@@ -47,7 +43,7 @@
 
         <!--Footer-->
     <footer>
-        <a href="index"><img src="img/Logo ID.png" alt="a logo of my branding"></a>
+        <a href="index"><img src="img/Logo ID red.png" alt="a logo of my branding"></a>
         <h3>Just come and say hello
             <i class="fa-regular fa-face-laugh-wink"></i></h3>
         <a href=""><i class="fa-brands fa-instagram"></i></a>
