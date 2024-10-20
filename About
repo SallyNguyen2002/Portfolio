@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/font-awesome/css/all.min.css" rel="stylesheet">
-    <link href="css/common.css" rel="stylesheet">
     <title>About</title>
  
 </head>
@@ -35,10 +34,10 @@
         <h2>Interesting Facts</h2>
         <ul>
             <li>I am an Leo ESFP which mean I am too energetic most of the time and don't have any some time.</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>More Info</li>
+            <li>More Info</li>
+            <li>More Info</li>
+            <li>More Info</li>
         </ul>
     </div>
 
