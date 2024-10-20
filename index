@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/font-awesome/css/all.min.css" rel="stylesheet">
-    <link href="css/common.css" rel="stylesheet">
     <title>Index</title>
 
 </head>
@@ -66,6 +65,7 @@
  
         <!--Footer-->
     <footer>
+        <div class="container" id="footer">
         <a href="index"><img src="img/Logo ID Red.png" alt="a logo of my branding"></a>
         <h3>Just come and say hello
             <i class="fa-regular fa-face-laugh-wink"></i></h3>
@@ -74,6 +74,7 @@
         <a href=""><i class="fa-brands fa-linkedin"></i></a>
         <a href=""><i class="fa-brands fa-github"></i></a>
         <p>&copy; 2024 Sally Nguyen. All Rights Reserved.</p>
+    </div>
     </footer>
 </body>
 </html>
