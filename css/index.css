@@ -1,0 +1,23 @@
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+#welcome {
+    display: flex;
+    background-color: #eac08c;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 45em;
+}
+
+
+#welcome h1 {
+    margin: 0;
+    font-size: 5em;
+    text-align: center;
+}
