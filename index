@@ -6,6 +6,8 @@
     <link href="css/font-awesome/css/all.min.css" rel="stylesheet">
     <link href="css/common.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
     <title>Index</title>
 
 </head>
