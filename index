@@ -13,9 +13,12 @@
     <header>
         <!--Navigation-->
         <nav>
-            <div class="container" id="nav-bar">
-                <a href="index"><img src="img/Logo ID Red.png" alt="a logo of my branding"></a>
-                <ul>
+            <div class="container-fluid" id="nav-bar">
+                <div id="logo">
+                    <a href="index"><img src="img/Logo ID Red.png" alt="a logo of my branding"></a>
+                    <h3>Sally <br> Nguyen</h3>
+                </div>
+                    <ul>
                     <li><a href="index">Home</a></li>
                     <li><a href="About">About</a></li>
                     <li><a href="Projects">Projects</a></li>
