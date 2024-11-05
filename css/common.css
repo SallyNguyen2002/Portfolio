@@ -18,8 +18,9 @@
 	src: url("../Font/Quicksand_Book_Oblique.otf");
 }
 
-body{
-    background: #a5c4bd;
+body {
+    margin: 0;
+    padding: 0;
 }
 
 h1, h2, h3, h4 {
@@ -28,26 +29,50 @@ h1, h2, h3, h4 {
 }
 
 a {
-    color:#3aafa9;
+    color:#9A3227;
     font-weight: bold;
     text-decoration: none;
 }
 
 a:hover {
-    color: salmon;
+    color: #9A3227;
     transition: 1s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #eac08c;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
 }
 
 #nav-bar {
     display: flex;
-    height: 70px;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    justify-content: space-between;
+    max-width: 1200px; /* Center the nav-bar content */
+    margin: 0 auto;
+    padding: 0.5em 1em;
 }
 
-nav img{
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between image and text */
+}
+
+#logo img {
     height: 50px;
+}
+
+#logo h3 {
+    margin: 0;
+    font-size: 1.2em;
 }
 
 nav ul{
@@ -61,7 +86,7 @@ nav ul{
 
 nav ul a{
     text-decoration: none;
-    color: #17252a;
+    color: #9A3227;
     padding: .5em;
 }
 
