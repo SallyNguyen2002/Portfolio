@@ -85,6 +85,12 @@ nav ul a{
     padding: .5em;
 }
 
+nav a:hover {
+    color: #eac08c;
+    -webkit-text-stroke: 1px #9A3227;
+    transition: .5s;
+}
+
 footer {
     justify-content: center;
 }
