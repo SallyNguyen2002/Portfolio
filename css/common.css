@@ -63,16 +63,16 @@ nav {
 #logo {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between image and text */
+    gap: 5px; /* Space between image and text */
 }
 
 #logo img {
-    height: 50px;
+    height: 30px;
 }
 
 #logo h3 {
     margin: 0;
-    font-size: 1.2em;
+    font-size: .8em;
 }
 
 nav ul{
