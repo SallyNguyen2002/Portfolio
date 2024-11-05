@@ -1,11 +1,15 @@
 @font-face{
 	font-family: mycontentfont;
-	src: url("../Font/Quicksand_Book.otf")";
+	src: url("../Font/Quicksand_Book.otf");
 }
 
 @font-face{
 	font-family: myheaderfont;
-	src: url("../Font/Stalysta_personal\ use.ttf");
+	src: url("../Font/Migra-Extrabold.eot");
+    src: url("../Font/Migra-Extrabold.otf");
+    src: url("../Font/Migra-Extrabold.ttf");
+    src: url("../Font/Migra-Extrabold.woff");
+    src: url("../Font/Migra-Extrabold.woff2");
 }
 
 
@@ -15,23 +19,28 @@
 }
 
 body{
-    background: #FED7B8;
+    background: #a5c4bd;
 }
 
 h1, h2, h3, h4 {
     color: #9A3227;
-
+    font-family: myheaderfont;
 }
 
 a {
-    color:#9A3227;
+    color:#3aafa9;
+    font-weight: bold;
     text-decoration: none;
+}
+
+a:hover {
+    color: salmon;
+    transition: 1s;
 }
 
 #nav-bar {
     display: flex;
-    height: 50px;
-    background-color: red;
+    height: 70px;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
@@ -47,11 +56,12 @@ nav ul{
     margin: 0;
     padding: 0;
     align-items: center;
+    font-family: myheaderfont;
 }
 
 nav ul a{
     text-decoration: none;
-    color: black;
+    color: #17252a;
     padding: .5em;
 }
 
