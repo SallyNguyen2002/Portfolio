@@ -96,12 +96,24 @@ nav a:hover {
     transition: .5s;
 }
 
-footer {
+#footer {
     justify-content: center;
+    display: flex;
 }
-footer a {
+
+#footer h3 {
+    font-size: 3em;
+}
+
+#ftcontent {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5em ;
+}
+
+#ftcontent a {
     color: #9A3227;
-    padding: .5em;
-    font-size: 1.2em;
+    padding-right: .5em;
+    font-size: 2em;
     justify-content: center;
 }
