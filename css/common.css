@@ -1,17 +1,17 @@
 @font-face{
 	font-family: mycontentfont;
-	src: url("../font/ont/Quicksand_Book.otf");
+	src: url("../font/Quicksand_Book.otf");
     src: url("../font/Quicksand_Book.woff");
-    src: url("../font/ont/Quicksand_Book.ttf");
+    src: url("../font/Quicksand_Book.ttf");
 }
 
 @font-face{
 	font-family: myheaderfont;
-	src: url("../font/ont/Migra-Extrabold.eot");
-    src: url("../font/ont/Migra-Extrabold.otf");
-    src: url("../font/ont/Migra-Extrabold.ttf");
-    src: url("../font/ont/Migra-Extrabold.woff");
-    src: url("../font/ont/Migra-Extrabold.woff2");
+	src: url("../font/Migra-Extrabold.eot");
+    src: url("../font/Migra-Extrabold.otf");
+    src: url("../font/Migra-Extrabold.ttf");
+    src: url("../font/Migra-Extrabold.woff");
+    src: url("../font/Migra-Extrabold.woff2");
 }
 
 
