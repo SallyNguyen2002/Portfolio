@@ -15,19 +15,6 @@
 </head>
 <body>
 
-        <!--About-->
-        <section>
-            <div class="container">
-                <h3>Sally Nguyen</h3>
-                <strong>SAIT UX Designer Student</strong>
-                <p>An energetic, ambitious, and outgoing student pursuing a major in User Experience
-                    within the Interactive Design program at SAIT.
-                    I love vibrant experiences, engaging in life eagerly and taking pleasure in
-                    discovering the unknown.</p>
-                <a href="About">MORE ABOUT ME</a>
-            </div>
-        </section>
-    </header>
         
         <!--Projects-->
     <div class="container">
@@ -72,6 +59,23 @@
             <li class='listitem'><span>Sally Nguyen</span></li>
         </ul>
     </div>
+    
+
+    <!-- About Section -->
+    <section>
+        <div class="container" id="intro">
+            <div class="image"></div>
+            <div class="content">
+                <h1>Sally Nguyen</h1>
+                <p>I am an energetic and ambitious student pursuing a major in User Experience within the Interactive Design program at SAIT.
+                    As a Leo and an ESFP, I thrive on vibrant experiences and eagerly engage with life, finding joy in discovering the unknown.
+                    I’m an outgoing person who enjoys collaborating with others and embracing leadership opportunities in my studies and projects.
+                    I love personal experiences and embrace my unique taste, which fuels my passion for graphic design as I create visually compelling experiences that resonate with users.
+                    My journey reflects my commitment to personal growth as I strive to enhance my formal speaking and writing skills while nurturing my creative pursuits</p>
+                <a href="#" class="button">Learn More</a>
+            </div>
+        </div>
+    </section>
 
 
         <!--Contacts-->
