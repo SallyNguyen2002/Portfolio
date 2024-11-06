@@ -6,3 +6,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+function openFileInNewTab(url) { //open file on a new tab
+    window.open(url, '_blank');
+}
