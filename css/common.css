@@ -96,24 +96,55 @@ nav a:hover {
     transition: .5s;
 }
 
-#footer {
-    justify-content: center;
+footer{
+    margin: 0;
+    padding: 0;
     display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#footer {
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 #footer h3 {
-    font-size: 3em;
+    font-size: 4em;
+    margin: 1.5em .5em 1.5em 1.5em;
+    text-align: right;
 }
 
 #ftcontent {
     display: flex;
     flex-direction: column;
-    margin-left: 5em ;
+    padding: 2em 0 0 20em;
+}
+
+#footer .fa-regular {
+    font-size: 8em;
+    color: #9A3227;
+    margin-top: .8em;
+}
+
+#ftcontent p {
+    line-height: 2em;
+}
+
+#ftcontent strong{
+    font-size: 1.5em;
+    font-family: myheaderfont;
 }
 
 #ftcontent a {
     color: #9A3227;
     padding-right: .5em;
+    padding-top: 10em;
     font-size: 2em;
     justify-content: center;
+}
+
+#copyright {
+    text-align: center;
 }
