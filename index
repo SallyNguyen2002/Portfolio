@@ -15,18 +15,6 @@
 </head>
 <body>
 
-        
-        <!--Projects-->
-    <div class="container">
-        <section>
-            <div class="container">
-                <h2>Projects</h2>
-                <p>Some of the significant projects that I designed in the past few years.</p>
-                <a href="Projects">MORE</a>
-                <div class="carousel slide" id="projcarol">
-                    <img src="img/" alt="My Birth Theme Line Art">
-                </div>
-                <p>Here is a link to my <a href="https://www.behance.net/sallynguyen5">Behance</a>.</p>
     <!-- Navigation -->
     <nav>
         <div class="container-fluid" id="nav-bar">
@@ -85,6 +73,19 @@
         </div>
     </section>
 
+    <section>
+        <div class="container" id="indexproj">
+            <h2>Projects</h2>
+            <p>Some of the significant projects that I designed in the past few years.</p>
+            <div class="gallery">
+                <div><img src="img/one line/birth.jpg" alt="Photo 1"></div>
+                <div><img src="img/one line/life.jpg" alt="Photo 2"></div>
+                <div><img src="img/one line/death.jpg" alt="Photo 3"></div>
+                <div><img src="img/one line/birth.jpg" alt="Photo 4"></div>
+            </div>
+            <a href="Projects">MORE</a>
+        </div>
+    </section>
 
         <!--Contacts-->
     <div class="container">
