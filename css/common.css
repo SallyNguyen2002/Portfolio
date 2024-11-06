@@ -1,23 +1,23 @@
 @font-face{
 	font-family: mycontentfont;
-	src: url("../font/Quicksand_Book.otf");
-    src: url("../font/Quicksand_Book.woff");
-    src: url("../font/Quicksand_Book.ttf");
+	src: url("../font/Quicksand_Book.otf"),
+         url("../font/Quicksand_Book.woff"),
+         url("../font/Quicksand_Book.ttf");
 }
 
 @font-face{
 	font-family: myheaderfont;
-	src: url("../font/Migra-Extrabold.eot");
-    src: url("../font/Migra-Extrabold.otf");
-    src: url("../font/Migra-Extrabold.ttf");
-    src: url("../font/Migra-Extrabold.woff");
-    src: url("../font/Migra-Extrabold.woff2");
+	src: url("../font/Migra-Extrabold.eot"),
+         url("../font/Migra-Extrabold.otf"),
+         url("../font/Migra-Extrabold.ttf"),
+         url("../font/Migra-Extrabold.woff"),
+         url("../font/Migra-Extrabold.woff2");
 }
 
 
 @font-face{
 	font-family: myitalicfont;
-	src: url("../Font/Quicksand_Book_Oblique.otf");
+	src: url("../font/Quicksand_Book_Oblique.otf");
 }
 
 body {
