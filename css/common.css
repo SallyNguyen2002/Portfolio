@@ -5,11 +5,11 @@
 
 @font-face{   
     font-family: myheaderfont;   
-    src: url("../Font/Migra-Extrabold.eot");    
-    src: url("../Font/Migra-Extrabold.otf") format("opentype"),        
-        url("../Font/Migra-Extrabold.ttf") format("truetype"),
-        url("../Font/Migra-Extrabold.woff") format("woff"),
-        url("../Font/Migra-Extrabold.woff2") format("woff2")
+    src: url("../font/Migra-Extrabold.eot");    
+    src: url("../font/Migra-Extrabold.otf") format("opentype"),        
+        url("../font/Migra-Extrabold.ttf") format("truetype"),
+        url("../font/Migra-Extrabold.woff") format("woff"),
+        url("../font/Migra-Extrabold.woff2") format("woff2");
 } 
 
 
