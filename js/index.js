@@ -27,3 +27,42 @@ function typePortfolio() {
 
 // Start the typing effect when the page loads
 document.addEventListener("DOMContentLoaded", typeIntro);
+
+
+$(document).ready(function() {
+    var $tickerWrapper = $(".tickerwrapper");
+    var $list = $tickerWrapper.find("ul.list");
+    var $clonedList = $list.clone();
+    var listWidth = 0;
+
+    // Calculate total width of the list
+    $list.find("li").each(function() {
+        listWidth += $(this).outerWidth(true);
+    });
+
+    // Set widths for animation
+    $list.add($clonedList).css({
+        "width": listWidth + "px"
+    });
+
+    // Append cloned list for infinite effect
+    $clonedList.addClass("cloned").appendTo($tickerWrapper);
+
+    // Create GSAP timeline
+    var time = 20; // Duration for scrolling effect
+    var infinite = gsap.timeline({ repeat: -1, paused: true });
+
+    infinite
+      .fromTo($list, time, { x: 0 }, { x: -listWidth, ease: "none" })
+      .fromTo($clonedList, time, { x: listWidth }, { x: 0, ease: "none" }, 0);
+
+    // Play the animation
+    infinite.play();
+
+    // Pause on hover
+    $tickerWrapper.on("mouseenter", function() {
+        infinite.pause();
+    }).on("mouseleave", function() {
+        infinite.play();
+    });
+});
