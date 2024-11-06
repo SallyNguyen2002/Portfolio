@@ -64,6 +64,12 @@
                     <img src="img/" alt="My Birth Theme Line Art">
                 </div>
                 <p>Here is a link to my <a href="https://www.behance.net/sallynguyen5">Behance</a>.</p>
+    <!-- Navigation -->
+    <nav>
+        <div class="container-fluid" id="nav-bar">
+            <div id="logo">
+                <a href="index"><img src="img/Logo ID Red.png" alt="a logo of my branding"></a>
+                <h3>Sally <br> Nguyen</h3>
             </div>
         </section>
     </div>
