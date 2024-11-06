@@ -56,6 +56,21 @@
                 <span id="portfolio-text"></span>
             </h1>
         </div>
+        <!-- Running Banner Section -->
+    </section>
+    <div class="tickerwrapper">
+        <ul class='list'>
+            <li class='listitem'><span>Sally Nguyen</span></li>
+            <li class='listitem'><span>Sally Nguyen</span></li>
+            <li class='listitem'><span>Sally Nguyen</span></li>
+            <li class='listitem'><span>Sally Nguyen</span></li>
+            <li class='listitem'><span>Sally Nguyen</span></li>
+            <li class='listitem'><span>Sally Nguyen</span></li>
+            <li class='listitem'><span>Sally Nguyen</span></li>
+            <li class='listitem'><span>Sally Nguyen</span></li>
+            <li class='listitem'><span>Sally Nguyen</span></li>
+            <li class='listitem'><span>Sally Nguyen</span></li>
+        </ul>
     </div>
 
 
