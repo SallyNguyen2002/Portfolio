@@ -34,7 +34,15 @@
                 <a href="index"><img src="img/Logo ID Red.png" alt="a logo of my branding"></a>
                 <h3>Sally <br> Nguyen</h3>
             </div>
-        </section>
+            <ul>
+                <li><a href="index">Home</a></li>
+                <li><a href="About">About</a></li>
+                <li><a href="Projects">Projects</a></li>
+                <li><a href="Contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- Welcome Section -->
     <section>
         <div class="container" id="welcome">
