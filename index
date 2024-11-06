@@ -101,15 +101,16 @@
         <!--Footer-->
     <footer>
         <div class="container" id="footer">
-        <a href="index"><img src="img/Logo ID Red.png" alt="a logo of my branding"></a>
-        <h3>Just come and say hello
-            <i class="fa-regular fa-face-laugh-wink"></i></h3>
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
-        <a href=""><i class="fa-brands fa-facebook-messenger"></i></a>
-        <a href=""><i class="fa-brands fa-linkedin"></i></a>
-        <a href=""><i class="fa-brands fa-github"></i></a>
-        <p>&copy; 2024 Sally Nguyen. All Rights Reserved.</p>
-    </div>
+            <a href="index"><img src="img/Logo ID Red.png" alt="a logo of my branding"></a>
+            <h3>Just come and say hello
+                <i class="fa-regular fa-face-laugh-wink"></i>
+            </h3>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-facebook-messenger"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <p>&copy; 2024 Sally Nguyen. All Rights Reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
