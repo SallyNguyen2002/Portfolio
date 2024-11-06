@@ -18,6 +18,7 @@ section{
     padding: 0;
 }
 
+/* Welcome Banner */
 #welcome {
     display: flex;
     background-color: #eac08c;
@@ -42,6 +43,7 @@ section{
     font-size: 8em;
 }
 
+/* Running banner */
 .tickerwrapper {
     position: relative;
     top: 30px;
@@ -75,12 +77,7 @@ ul.list li {
     font-size: 1.5em;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* Introduction */
 #intro {
     display: flex;
     background-color: white;
@@ -141,6 +138,7 @@ ul.list li {
     transition: .5s;
 }
 
+/* Project */
 #indexproj {   
     display: flex;
     background-color: #9A3227;
