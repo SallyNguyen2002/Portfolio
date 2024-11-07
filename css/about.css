@@ -1,0 +1,47 @@
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.pageheader{
+    margin-bottom: 30px;
+}
+
+#about{
+    display: flex;
+    background-color: black;
+}
+
+img {
+    max-width: 600px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.pagedesc{
+    display: flex;
+    margin: 0;
+    background-color: #9A3227;
+    padding: 45px;
+    color: #eac08c;
+}
+
+.fact h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+.fact p {
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 2em;
+}
+
+.secret h2{
+    background-color: #9A3227;
+    padding: 1em;
+    color: #eac08c;
+    text-align: center;
+}
