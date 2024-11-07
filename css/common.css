@@ -97,6 +97,11 @@ nav a:hover {
     transition: .5s;
 }
 
+.pageheader {
+    font-size: 5em;
+    text-align: center;
+}
+
 footer{
     margin: 0;
     padding: 0;
