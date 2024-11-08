@@ -40,9 +40,10 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    color: #9A3227;
-    transition: 1s;
+a:hover h3{
+    color: #eac08c;
+    stroke: 1px solid #9A3227;
+    transition: .5s;
 }
 
 nav {
@@ -67,8 +68,13 @@ nav {
     gap: 5px; /* Space between image and text */
 }
 
+#logo a{
+    display: flex;
+}
+
 #logo img {
     height: 30px;
+    margin-right: .3em;
 }
 
 #logo h3 {
