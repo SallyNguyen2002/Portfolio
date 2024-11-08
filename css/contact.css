@@ -1,0 +1,100 @@
+.pagedesc {
+    padding: 0;
+    margin: 0;
+}
+
+.header p {
+    text-align: center;
+    padding: 1em 0 0 0;
+    margin: 0;
+}
+
+.contactbox {
+    display: flex;
+    margin: 3em 20em;
+    justify-content: center;
+    background-color: #9A3227;
+    border-radius: 10px;
+}
+
+.contactinfo {
+    margin: 3em 6em 2em 6em;
+    padding: 0
+}
+
+.contactinfo p{
+    color: white;
+    padding: 2px 0;
+    margin: 0;
+}
+
+.contactinfo h2 {
+    color: #eac08c;
+}
+
+#contactmedia {
+    display: flex;
+}
+
+.contactinfo a {
+    color: #eac08c;
+    font-size: 1.5em;
+    margin: 1em 1em 1em 0;
+}
+
+.contactinfo a:hover {
+    -webkit-text-stroke: 1px #eac08c;
+    color: #9A3227;
+    transition: .5s;
+}
+
+#contactmedia {
+    display: flex;
+    font-size: 1em;
+}
+
+.contactform {
+    margin: 2em 6em 2em 4em;
+}
+
+.contactform p{
+    color: white;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.contactform h2 {
+    color: #eac08c;
+
+}
+
+table {
+    color: white;
+    font-family: mycontentfont;
+}
+
+table input, textarea {
+    margin-left: 2em;
+    background-color: #9A3227;
+    border: none;
+    border-bottom: 2px solid #eac08c;
+    padding: 0;
+    color: white;
+}
+
+.submit {
+    background-color: #eac08c;
+    color: #9A3227;
+    padding: .5em 1em;
+    margin: 2em 0 1em 0;
+    border-radius: 5px;
+    font-family: mycontentfont;
+}
+
+.submit:hover {
+    background-color: #9A3227;
+    color: #eac08c;
+    border: 2px solid #eac08c;
+}
+
+
