@@ -167,6 +167,12 @@ footer{
     justify-content: center;
 }
 
+#ftcontent a:hover{
+    color: #eac08c;
+    -webkit-text-stroke: 1.5px #9A3227;
+    transition: .5s;
+}
+
 #copyright {
     text-align: center;
 }
