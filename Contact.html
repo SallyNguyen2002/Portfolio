@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/font-awesome/css/all.min.css" rel="stylesheet">
     <link href="css/common.css" rel="stylesheet">
+    <link href="css/contact.css" rel="stylesheet">
     <title>Contact</title>
 
 </head>
@@ -28,36 +29,47 @@
     </header>
 
     <div class="container">
-        <h2>Having cool ideas for project or wanting to cooperate</h2>
-        <p>or just crash by to say hi</p>
-        <h5>Email</h5>
-        <h5>Phone number</h5>
-        <h5>Social Media</h5>
-        <a href="">Instagram</a><br>
-        <a href="">Facebook</a><br>
-        <a href="">LinkedIn</a>
-        <h2>Or contact me by filling out this form.</h2>
-        <form action="submit_form.php" method="post">
-            <table>
-                <tr>
-                    <td><label for="name">Name:</label></td>
-                    <td><input type="text" id="name" name="name" required></td>
-                </tr>
-                <tr>
-                    <td><label for="email">Email:</label></td>
-                    <td><input type="email" id="email" name="email" required></td>
-                </tr>
-                <tr>
-                    <td><label for="message">Message:</label></td>
-                    <td><textarea id="message" name="message" rows="4" cols="40" required></textarea></td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: center;">
-                        <input type="submit" value="Submit">
-                    </td>
-                </tr>
-            </table>
-        </form>
+        <div class="header">
+            <h1 class="pageheader">Contacts</h1>
+            <p class="pagedesc">Having cool ideas for project or wanting to cooperate</p>
+            <p>or just crash by to say hi</p>
+        </div>
+        <div class="contactbox">
+            <div class="contactinfo">
+                <h2>Contact</h2>
+                <p>anh.sally0902@gmail.com</p>
+                <p>825 747 6789</p>
+                <div class="container" id="contactmedia">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a><br>
+                    <a href=""><i class="fa-brands fa-facebook-messenger"></i></a><br>
+                    <a href=""><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="contactform">
+                <h2>Or contact me by filling out this form.</h2>
+                <form action="submit_form.php" method="post">
+                    <table>
+                        <tr>
+                            <td><label for="name">Name:</label></td>
+                            <td><input type="text" id="name" name="name" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email:</label></td>
+                            <td><input type="email" id="email" name="email" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="message">Message:</label></td>
+                            <td><textarea id="message" name="message" rows="4" cols="40" required></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <input class="submit" type="submit" value="Submit">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+    </div>
     </div>
 
         <!--Footer-->
