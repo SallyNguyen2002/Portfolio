@@ -23,9 +23,7 @@ body {
     padding: 0;
     background-color: #eac08c;
     cursor: url('../img/cursor.png'), auto;
-    curso
-
-}
+} 
 
 h1, h2, h3, h4 {
     color: #9A3227;
@@ -41,6 +39,7 @@ a {
     color:#9A3227;
     font-weight: bold;
     text-decoration: none;
+    cursor: url('../img/pointer.png'), pointer;
 }
 
 nav {
