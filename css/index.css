@@ -55,6 +55,7 @@ section{
     cursor: pointer;
     color: #eac08c;
     padding: 0 10px;
+    cursor: url('../img/pointer.png'), pointer;
 }
 
 ul.list {
