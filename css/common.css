@@ -43,12 +43,6 @@ a {
     text-decoration: none;
 }
 
-a:hover h3{
-    color: #eac08c;
-    stroke: 1px solid #9A3227;
-    transition: .5s;
-}
-
 nav {
     background-color: #eac08c;
     margin: 0;
@@ -100,7 +94,7 @@ nav ul a{
     padding: .5em;
 }
 
-nav a:hover {
+nav UL a:hover {
     color: #eac08c;
     -webkit-text-stroke: 1px #9A3227;
     transition: .5s;
