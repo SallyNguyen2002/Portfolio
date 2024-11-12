@@ -1,30 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
 .container {
     margin: 0;
     padding: 0;
 }
 
-.pageheader{
+.pageheader {
     margin-bottom: 30px;
+    text-align: center;
 }
 
-#about{
+#about {
     display: flex;
     background-color: black;
+    align-items: center;
+    padding: 2em;
+    justify-content: center;
+    gap: 2em;
 }
 
 img {
     max-width: 600px;
-    height: 100%;
+    width: 100%; /* Ensures responsiveness */
+    height: auto;
     display: block;
     margin: 0 auto;
 }
 
-.pagedesc{
+.pagedesc {
     display: flex;
     margin: 0;
     background-color: #9A3227;
     padding: 45px;
     color: #eac08c;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .fact h2 {
@@ -37,12 +50,67 @@ img {
     text-align: center;
     line-height: 2;
     margin: 0 20em 1em 20em;
+    color: black;
 }
 
-.secret h2{
+.secret h2 {
     background-color: #9A3227;
     padding: 1em;
     color: #eac08c;
     text-align: center;
     margin-top: 2em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* About section adjustments for tablets */
+    #about {
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .fact h2, .secret h2 {
+        font-size: 1.8em;
+    }
+
+    .fact p {
+        margin: 0 5em 1em 5em; /* Reduce horizontal margins */
+        font-size: 1em;
+    }
+
+    .pagedesc {
+        padding: 30px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* About section adjustments for mobile */
+    #about {
+        padding: 1em;
+    }
+
+    img {
+        width: 100%; /* Full width on mobile */
+        height: auto;
+    }
+
+    .fact h2, .secret h2 {
+        font-size: 1.5em;
+    }
+
+    .fact p {
+        margin: 0 1em 1em 1em; /* Further reduce margins for mobile */
+        font-size: 0.9em;
+    }
+
+    .pagedesc {
+        padding: 20px;
+        font-size: 0.9em;
+    }
 }
