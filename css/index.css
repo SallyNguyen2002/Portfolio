@@ -3,8 +3,8 @@
 }
 
 body {
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -13,7 +13,7 @@ body {
     padding: 0;
 }
 
-section{
+section {
     margin: 0;
     padding: 0;
 }
@@ -25,32 +25,33 @@ section{
     justify-content: center;
     align-items: center;
     height: 35em;
+    text-align: center;
+    padding: 1em;
 }
 
 #welcome h1 {
     margin: 0;
-    text-align: center;
 }
 
 #intro-text {
     -webkit-text-stroke: 2px #9A3227;
-    color: #eac08c; /* Color for "Welcome To My" */
+    color: #eac08c;
     font-size: 5em;
 }
 
 #portfolio-text {
-    color: #9A3227; /* Color for "Portfolio" */
+    color: #9A3227;
     font-size: 8em;
 }
 
-/* Running banner */
+/* Running Banner */
 .tickerwrapper {
     position: relative;
     top: 30px;
     left: 0;
     background: #9A3227;
-    width: 99.9%;
-    height: 50px; /*height of the banner*/
+    width: 100%;
+    height: 50px;
     overflow: hidden;
     cursor: pointer;
     color: #eac08c;
@@ -63,13 +64,13 @@ ul.list {
     display: inline-block;
     list-style: none;
     padding: 0;
-    margin: .6em;
+    margin: 0.6em;
 }
 
 ul.list.cloned {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
 }
 
 ul.list li {
@@ -110,7 +111,7 @@ ul.list li {
 
 #intro h1 {
     padding: 0;
-    margin: 0 0 0 0;
+    margin: 0;
     font-size: 5em;
 }
 
@@ -123,7 +124,7 @@ ul.list li {
 #intro .button {
     display: inline-block;
     padding: 0.8em 1.5em;
-    background-color: #9A3227; 
+    background-color: #9A3227;
     color: white;
     text-transform: uppercase;
     font-weight: bold;
@@ -136,72 +137,153 @@ ul.list li {
 #intro .button:hover {
     background-color: #eac08c;
     color: #9A3227;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-/* Project */
-#indexproj {   
+/* Project Section */
+#indexproj {
     display: flex;
+    flex-direction: column;
     background-color: #9A3227;
     justify-content: center;
     align-items: center;
-}
-
-#indexproj {
-    display: flex;
-    flex-direction: column; 
-    background-color: #9A3227; 
-    justify-content: center; 
-    align-items: center; 
     width: 100vw;
-    padding-bottom: 5em; 
-    margin-left: calc(0 - 50vw + 50%); 
-    color: white; 
+    padding: 2em 0;
+    color: white;
 }
 
 #indexproj h2 {
-    color: #eac08c; 
-    margin-bottom: 0em; /* Space below the heading */
-    font-size: 5em; 
+    color: #eac08c;
+    margin-bottom: 0;
+    font-size: 5em;
 }
 
 #indexproj p {
-    color: white; 
-    text-align: center; 
-    margin-bottom: 1em; /* Space below the paragraph */
+    color: white;
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 #indexproj a {
-    color: #eac08c; 
+    color: #eac08c;
     font-weight: bold;
     border: 1px solid #eac08c;
     border-radius: 10px;
-    padding: 5px 50px 5px 50px;
+    padding: 5px 50px;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 #indexproj a:hover {
     color: #9A3227;
     background-color: #eac08c;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .gallery {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
     padding: 20px;
 }
 
 .gallery div {
-    margin: 10px;
     width: 300px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
-    padding: 0;
 }
 
 .gallery img {
     width: 100%;
     height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #welcome {
+        height: auto;
+        padding: 2em 1em;
+    }
+
+    #intro-text {
+        font-size: 3em;
+    }
+
+    #portfolio-text {
+        font-size: 5em;
+    }
+
+    #intro {
+        flex-direction: column;
+        padding: 1em;
+        margin: 5em 0;
+    }
+
+    #intro h1 {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    #intro .content p {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    #intro .button {
+        width: auto;
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    #indexproj h2 {
+        font-size: 3em;
+    }
+
+    #indexproj p {
+        font-size: 1em;
+        padding: 0 1em;
+    }
+
+    #indexproj a {
+        font-size: 1em;
+        padding: 0.5em 2em;
+    }
+
+    .gallery div {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    ul.list li {
+        font-size: 1em;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #intro-text {
+        font-size: 2em;
+    }
+
+    #portfolio-text {
+        font-size: 3.5em;
+    }
+
+    #intro h1 {
+        font-size: 2.5em;
+    }
+
+    #indexproj h2 {
+        font-size: 2.5em;
+    }
+
+    #indexproj p {
+        font-size: 0.9em;
+    }
+
+    #indexproj a {
+        font-size: 0.9em;
+        padding: 0.5em 1.5em;
+    }
 }
