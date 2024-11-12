@@ -36,7 +36,7 @@ img {
 .fact p {
     text-align: center;
     line-height: 2;
-    margin-bottom: 2em;
+    margin: 0 20em 1em 20em;
 }
 
 .secret h2{
@@ -44,4 +44,5 @@ img {
     padding: 1em;
     color: #eac08c;
     text-align: center;
+    margin-top: 2em;
 }
