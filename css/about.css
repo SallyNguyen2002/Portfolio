@@ -87,6 +87,10 @@ img {
         padding: 30px;
         font-size: 1em;
     }
+
+    .secret {
+        font-size: .7em;
+    }
 }
 
 @media (max-width: 480px) {
