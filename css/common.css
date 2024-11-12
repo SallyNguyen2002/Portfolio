@@ -43,6 +43,21 @@ a {
     cursor: url('../img/pointer.png'), pointer;
 }
 
+.pageheader {
+    font-size: 5em;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.pagedesc{
+    text-align: center;
+    font-family: myheaderfont;
+    font-size: 1.5em;
+    margin: 0.5em 3em .5em 3em;
+    padding: 0;
+}
+
 /* Navigation */
 nav {
     background-color: #eac08c;
