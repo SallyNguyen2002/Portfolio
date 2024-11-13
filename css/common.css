@@ -207,13 +207,13 @@ footer {
     #nav-menu {
         display: none; /* Hidden by default */
         position: absolute;
-        top: 70px;
+        top: 45px;
         right: 0;
         background-color: #9A3227;
         width: 100%;
         flex-direction: column;
         align-items: center;
-        padding: 1em 0;
+        padding: .5em 0;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
 
@@ -223,11 +223,13 @@ footer {
 
     #nav-menu a{
         color: #eac08c;
+        padding: .5em 5em;
     }
 
     #nav-menu a:hover{
         color: #9A3227;
-        -webkit-text-stroke: 1px #eac08c;
+        background-color: #eac08c;
+        transition: .5s;
     }
 
     /* Show menu when it’s active */
