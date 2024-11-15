@@ -125,6 +125,27 @@ nav {
     color: #9A3227;
 }
 
+.scroll-up-btn {
+    all: unset;
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+    height: 45px;
+    width: 45px;
+    background-color: #9A3227;
+    border-radius: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.scroll-up-btn .fa-solid {
+    color: #eac08c;
+    pointer-events: none;
+}
+
+
 /* Footer Styling */
 footer {
     background-color: #eac08c;
