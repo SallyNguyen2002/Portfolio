@@ -133,17 +133,21 @@ nav {
     height: 45px;
     width: 45px;
     background-color: #9A3227;
-    border-radius: 99%;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    padding: 0;
 }
 
 .scroll-up-btn .fa-solid {
     color: #eac08c;
+    font-size: 20px; /* Adjust to center the icon */
     pointer-events: none;
+    padding-left: 13px;
 }
+
 
 
 /* Footer Styling */

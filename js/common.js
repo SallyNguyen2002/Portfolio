@@ -1,22 +1,41 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+document.addEventListener("DOMContentLoaded", () => {
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
-});
 
-function toggleMenu() {
-    const menu = document.getElementById('nav-menu');
-    menu.classList.toggle('active');
-}
+    // Toggle navigation menu (for mobile)
+    function toggleMenu() {
+        const menu = document.getElementById('nav-menu');
+        menu.classList.toggle('active');
+    }
 
-const btn = document.querySelector(".scroll-up-btn");
+    // Back to Top Button Functionality
+    const scrollToTopBtn = document.querySelector(".scroll-up-btn");
 
-btn.addEventListener("click", () => {
-    document.documentElement.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    if (scrollToTopBtn) {
+        // Show the button after scrolling down 20px
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        // Smooth scroll to the top when the button is clicked
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    } else {
+        console.warn("Scroll to top button not found.");
+    }
 });
