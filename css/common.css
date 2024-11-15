@@ -139,6 +139,7 @@ nav {
     justify-content: center;
     cursor: pointer;
     padding: 0;
+    border: 2px solid #eac08c;
 }
 
 .scroll-up-btn .fa-solid {
@@ -147,7 +148,6 @@ nav {
     pointer-events: none;
     padding-left: 13px;
 }
-
 
 
 /* Footer Styling */
