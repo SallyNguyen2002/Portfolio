@@ -39,3 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn("Scroll to top button not found.");
     }
 });
+
+// dynamic year
+//const fYear = document.getElementById("footerYear");
+//const d = new Date();
+//fYear.innerText = d.getFullYear();
+// fYear.textContent = d;
+//console.log(d);
