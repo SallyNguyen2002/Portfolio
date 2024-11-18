@@ -9,11 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+
     // Toggle navigation menu (for mobile)
     function toggleMenu() {
         const menu = document.getElementById('nav-menu');
         menu.classList.toggle('active');
     }
+
 
     // Back to Top Button Functionality
     const scrollToTopBtn = document.querySelector(".scroll-up-btn");
@@ -39,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn("Scroll to top button not found.");
     }
 
+
     // FOOTER COPYRIGHT OF CURRENT YEAR
     const currentYear = new Date().getFullYear();
 
@@ -46,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const greetingElement = document.getElementById("greeting");
     const welcomeContainer = document.getElementById("welcome");
+
 
     // GREETING TEXT
     const currentHour = new Date().getHours();
@@ -67,10 +71,22 @@ document.addEventListener("DOMContentLoaded", () => {
     greetingElement.textContent = greetingText;
     welcomeContainer.classList.add(cssClass);
 
+
     // Alert button
     const alertButton = document.getElementById("btn-alert");
 
+    //display a message
     alertButton.addEventListener("click", function (event) {
         alert("Yay! You want to learn more about me??!!");
     });
+
+    // Change the button text when the mouse is over it
+    alertButton.onmouseover = function () {
+        alertButton.innerText = "Wink wink <3";
+    };
+
+    // Revert the button text when the mouse leaves
+    alertButton.onmouseout = function () {
+        alertButton.innerText = "Learn More";
+    };
 });
