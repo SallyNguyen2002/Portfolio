@@ -38,20 +38,18 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.warn("Scroll to top button not found.");
     }
-    
-    // Get the current year
+
+    // FOOTER COPYRIGHT OF CURRENT YEAR
     const currentYear = new Date().getFullYear();
 
-    // Set the year in the HTML
     document.getElementById('currentYear').textContent = currentYear;
 
     const greetingElement = document.getElementById("greeting");
     const welcomeContainer = document.getElementById("welcome");
 
-    // Get the current hour
+    // GREETING TEXT
     const currentHour = new Date().getHours();
 
-    // Determine the greeting and corresponding CSS class
     let greetingText;
     let cssClass;
 
@@ -66,9 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
         cssClass = "evening";
     }
 
-    // Update the greeting text
     greetingElement.textContent = greetingText;
-
-    // Add the corresponding CSS class to the container
     welcomeContainer.classList.add(cssClass);
+
+    // Alert button
+    const alertButton = document.getElementById("btn-alert");
+
+    alertButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        alert("Yay! You want to learn more about me??!!");
+    });
 });
