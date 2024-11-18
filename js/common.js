@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const alertButton = document.getElementById("btn-alert");
 
     alertButton.addEventListener("click", function (event) {
-        event.preventDefault();
         alert("Yay! You want to learn more about me??!!");
     });
 });
