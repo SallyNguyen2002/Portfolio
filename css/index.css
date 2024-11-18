@@ -19,6 +19,7 @@ section {
 }
 
 /* Welcome Banner */
+
 #welcome {
     display: flex;
     background-color: #eac08c;
@@ -27,6 +28,10 @@ section {
     height: 35em;
     text-align: center;
     padding: 1em;
+}
+
+#greeting {
+    font-size: 1.5em;
 }
 
 #welcome h1 {
@@ -199,6 +204,10 @@ ul.list li {
 
     #intro-text {
         font-size: 3em;
+    }
+
+    #greeting {
+        font-size: 1em;
     }
 
     #portfolio-text {

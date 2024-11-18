@@ -38,12 +38,37 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.warn("Scroll to top button not found.");
     }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
+    
     // Get the current year
     const currentYear = new Date().getFullYear();
 
     // Set the year in the HTML
     document.getElementById('currentYear').textContent = currentYear;
+
+    const greetingElement = document.getElementById("greeting");
+    const welcomeContainer = document.getElementById("welcome");
+
+    // Get the current hour
+    const currentHour = new Date().getHours();
+
+    // Determine the greeting and corresponding CSS class
+    let greetingText;
+    let cssClass;
+
+    if (currentHour < 12) {
+        greetingText = "Good morning!";
+        cssClass = "morning";
+    } else if (currentHour < 17) {
+        greetingText = "Good afternoon!";
+        cssClass = "afternoon";
+    } else {
+        greetingText = "Good evening!";
+        cssClass = "evening";
+    }
+
+    // Update the greeting text
+    greetingElement.textContent = greetingText;
+
+    // Add the corresponding CSS class to the container
+    welcomeContainer.classList.add(cssClass);
 });
