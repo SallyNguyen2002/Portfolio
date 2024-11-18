@@ -90,3 +90,19 @@ document.addEventListener("DOMContentLoaded", () => {
         alertButton.innerText = "Learn More";
     };
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const orderedList = document.getElementById("numbered-list");
+
+    if (!orderedList) {
+        console.error("Element with ID 'numbered-list' not found in the DOM.");
+        return;
+    }
+
+    for (let i = 1; i <= 12; i++) {
+        const listItem = document.createElement("li");
+        listItem.textContent = i % 2 === 0 ? "even" : "odd";
+        orderedList.appendChild(listItem);
+    }
+});
+
