@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../css/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
+    <link href="../../css/contact.css" rel="stylesheet">
+    <script src="../../js/common.js"></script>
+    <title>Contact</title>
+
+</head>
+<body>
+    <header>
+        <button class="scroll-up-btn">
+            <i class="fa-solid fa-chevron-up"></i> 
+        </button>
+        
+        <!--Navigation-->
+        <nav>
+            <div class="container-fluid" id="nav-bar">
+                <div id="logo">
+                    <a href="../../">
+                        <img src="../../img/Logo ID Red.png" alt="a logo of my branding">
+                        <h3>Sally<br>Nguyen</h3>
+                    </a>
+                </div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="../../">Home</a></li>
+                    <li><a href="../../about/">About</a></li>
+                    <li><a href="../">Projects</a></li>
+                    <li><a href="../../contact/">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="pageheader">Contacts</h1>
+            <p class="pagedesc">Having cool ideas for project or wanting to cooperate</p>
+            <p>or just crash by to say hi</p>
+        </div>
+        <div class="contactbox">
+            <div class="contactinfo">
+                <h2>Contact</h2>
+                <p>anh.sally1508@gmail.com</p>
+                <p>825 747 0889</p>
+                <div class="container" id="contactmedia">
+                    <a href="https://www.instagram.com/asianomnivore/?hl=en"><i class="fa-brands fa-instagram"></i></a><br>
+                    <a href=""><i class="fa-brands fa-facebook-messenger"></i></a><br>
+                    <a href="https://github.com/SallyNguyen2002"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="contactform">
+                <h2>Or contact me by filling out this form.</h2>
+                <form action="submit_form.php" method="post">
+                    <table>
+                        <tr>
+                            <td><label for="name">Name:</label></td>
+                            <td><input type="text" id="name" name="name" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email:</label></td>
+                            <td><input type="email" id="email" name="email" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="message">Message:</label></td>
+                            <td><textarea id="message" name="message" rows="4" cols="40" required></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <input class="submit" type="submit" value="Submit">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+    </div>
+    </div>
+
+        <!--Footer-->
+        <footer>
+            <div class="container">
+                <div class="container" id="footer">
+                    <h3>Just come<br>and say hello</h3>
+                    <i class="fa-regular fa-face-laugh-wink"></i>
+                    <div class="container" id="ftcontent">
+                        <p>Whether you’ve got<br><strong>cool project,<br>a commission idea,<br>an event to chat about</strong>,<br>
+                        or just want to send some <strong>good vibes</strong><br>
+                        Slide into my inbox.
+                        I’m all ears (and laughs)!</p>
+                        <div class="container" id="socialmedia">
+                            <a href="https://www.instagram.com/asianomnivore/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100010669591586" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
+                            <a href="https://www.linkedin.com/in/sally-nguyen-5479571bb/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/SallyNguyen2002" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p id="copyright">&copy; <span id="currentYear"></span> Sally Nguyen. All Rights Reserved.</p>
+        </footer>
+</body>
+</html>
