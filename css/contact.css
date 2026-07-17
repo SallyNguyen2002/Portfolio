@@ -23,7 +23,7 @@ body {
 /* Contact Box */
 .contactbox {
     display: flex;
-    margin: 3em 20em;
+    margin: 3em 18em;
     justify-content: center;
     background-color: #9A3227;
     border-radius: 10px;
@@ -116,7 +116,7 @@ textarea {
     /* Contact Box adjustments for tablets */
     .contactbox {
         flex-direction: column;
-        margin: 3em 2em;
+        margin: 2em 2em;
         padding: 1.5em;
     }
 
