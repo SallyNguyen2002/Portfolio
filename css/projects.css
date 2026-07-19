@@ -7,26 +7,21 @@ body {
     margin: 0;
 }
 
-section {
+.red {
     background-color: #9A3227;
     padding-top: 20px;
     padding-bottom: 20px;
     margin: 0;
 }
 
-.collection {
-    margin-bottom: 5em;
-}
-
-/* Centered title with line styling */
-.line-text {
+.red .line-text {
     text-align: center;
     border-bottom: 2px solid #eac08c;
     line-height: 0;
     margin: 50px auto;
 }
 
-.line-text span {
+.red .line-text span {
     background: #9A3227;
     padding: 0 10px;
     color: #eac08c;
@@ -34,37 +29,83 @@ section {
     font-size: 2em;
 }
 
+.beige {
+    background-color: #eac08c;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.beige .line-text {
+    text-align: center;
+    border-bottom: 2px solid #9A3227;
+    line-height: 0;
+    margin: 50px auto;
+}
+
+.beige .line-text span {
+    background: #eac08c;
+    padding: 0 10px;
+    color:#9A3227;
+    font-family: myheaderfont;
+    font-size: 2em;
+}
+
+.collection {
+    margin-bottom: 4em;
+}
+
+
 /* Gallery Layout */
 .gallery {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 20px; /* Adds space between gallery items */
-    padding: 10px;
+    align-items: center;      /* vertically centers the text */
+    justify-content: center;;
+    gap: 30px;
+    padding: 0px 10px;
 }
 
-.gallery div {
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    overflow: hidden;
+.gallery a {
+    flex: 0 0 350px;          /* image stays 300px wide */
 }
 
 .gallery img {
     width: 100%;
-    height: auto;
     display: block;
+    border-radius: 5px;
+}
+
+.gallery p {
+    flex: 0 1 500px;                 /* paragraph takes remaining space */
+    margin: 0;
+}
+
+.red p{
+    color: #eac08c;
+}
+
+.beige p{
+    color: #9A3227;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .line-text span {
-        font-size: 1.5em; /* Reduce title font size on tablets */
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .gallery div {
-        width: 45%; /* Display two items per row on tablets */
-        max-width: 100%;
+    .gallery a {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .gallery p {
+        width: 100%;
+        max-width: 600px;
+        flex: none;
+        margin: 0;
     }
 }
 
