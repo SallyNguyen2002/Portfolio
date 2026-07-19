@@ -7,66 +7,69 @@ body {
     margin: 0;
 }
 
+/* ---------- Section Colors ---------- */
+
 .red {
     background-color: #9A3227;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin: 0;
-}
-
-.red .line-text {
-    text-align: center;
-    border-bottom: 2px solid #eac08c;
-    line-height: 0;
-    margin: 50px auto;
-}
-
-.red .line-text span {
-    background: #9A3227;
-    padding: 0 10px;
-    color: #eac08c;
-    font-family: myheaderfont;
-    font-size: 2em;
+    padding: 20px 0;
 }
 
 .beige {
     background-color: #eac08c;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin: 0;
+    padding: 20px 0;
 }
 
+/* ---------- Line Title ---------- */
+
+.red .line-text,
 .beige .line-text {
     text-align: center;
-    border-bottom: 2px solid #9A3227;
     line-height: 0;
     margin: 50px auto;
 }
 
+.red .line-text {
+    border-bottom: 2px solid #eac08c;
+}
+
+.beige .line-text {
+    border-bottom: 2px solid #9A3227;
+}
+
+.red .line-text span {
+    background: #9A3227;
+    color: #eac08c;
+}
+
 .beige .line-text span {
     background: #eac08c;
+    color: #9A3227;
+}
+
+.line-text span {
     padding: 0 10px;
-    color:#9A3227;
     font-family: myheaderfont;
     font-size: 2em;
 }
+
+/* ---------- Collection ---------- */
 
 .collection {
     margin-bottom: 4em;
 }
 
+/* ---------- Gallery ---------- */
 
-/* Gallery Layout */
 .gallery {
     display: flex;
-    align-items: center;      /* vertically centers the text */
-    justify-content: center;;
-    gap: 30px;
-    padding: 0px 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
 }
 
 .gallery a {
-    flex: 0 0 350px;          /* image stays 300px wide */
+    flex: 0 0 350px;
 }
 
 .gallery img {
@@ -75,47 +78,64 @@ body {
     border-radius: 5px;
 }
 
-.gallery p {
-    flex: 0 1 500px;                 /* paragraph takes remaining space */
-    margin: 0;
-}
+/* ---------- Paragraph ---------- */
 
-.red p{
+.red .gallery p {
+    flex: 0 1 500px;
+    margin: 0;
     color: #eac08c;
 }
 
-.beige p{
+.beige .gallery p {
+    flex: 0 0 500px;
+    margin: 0;
     color: #9A3227;
 }
 
-/* Responsive Styles */
+/* ---------- Reverse Beige Layout ---------- */
+
+.beige .gallery {
+    flex-direction: row-reverse;
+}
+
+/* ---------- Tablet & Mobile ---------- */
+
 @media (max-width: 768px) {
-    .gallery {
+
+    .gallery,
+    .beige .gallery {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 20px;
     }
 
     .gallery a {
+        flex: none;
         width: 100%;
         max-width: 500px;
     }
 
-    .gallery p {
+    .red .gallery p,
+    .beige .gallery p {
+        flex: 1;
         width: 100%;
         max-width: 600px;
-        flex: none;
         margin: 0;
     }
+
 }
 
+/* ---------- Small Phones ---------- */
+
 @media (max-width: 480px) {
+
     .line-text span {
-        font-size: 1.2em; /* Further reduce title font size on mobile */
+        font-size: 1.2em;
     }
 
-    .gallery div {
-        width: 90%; /* Full width for gallery items on mobile */
-        margin: 0 auto; /* Center align on smaller screens */
+    .gallery {
+        padding: 0 15px;
     }
+
 }
