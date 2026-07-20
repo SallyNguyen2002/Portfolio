@@ -43,6 +43,10 @@ a {
     cursor: url('../img/pointer.png'), pointer;
 }
 
+.header {
+    padding: 30px 0px 50px 0px;
+}
+
 .pageheader {
     font-size: 5em;
     text-align: center;
