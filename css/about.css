@@ -22,7 +22,7 @@
 }
 
 img {
-    max-width: 600px;
+    max-width: 1000px;
     width: 100%; /* Ensures responsiveness */
     height: auto;
     display: block;
@@ -41,8 +41,6 @@ img {
 }
 
 .fact img{
-    display: block;
-    width: 1000px;
     margin-top: 50px;
 }
 
