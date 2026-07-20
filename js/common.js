@@ -12,8 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Toggle navigation menu (for mobile)
     function toggleMenu() {
-        const menu = document.getElementById('nav-menu');
-        menu.classList.toggle('active');
+        const menu = document.getElementById("nav-menu");
+
+        if (menu) {
+            menu.classList.toggle("active");
+        }
     }
 
 

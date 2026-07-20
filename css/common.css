@@ -66,6 +66,8 @@ a {
 nav {
     background-color: #eac08c;
     width: 100%;
+    position: relative;
+    z-index: 1000;
 }
 
 #nav-bar {
@@ -235,16 +237,18 @@ footer {
 
     /* Hide the nav menu by default on smaller screens */
     #nav-menu {
-        display: none; /* Hidden by default */
+        display: none;
         position: absolute;
-        top: 45px;
+        top: 100%;
+        left: 0;
         right: 0;
         background-color: #9A3227;
         width: 100%;
         flex-direction: column;
         align-items: center;
-        padding: .5em 0;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 0.5em 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
     }
 
     #nav-menu li {
