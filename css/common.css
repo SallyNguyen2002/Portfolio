@@ -1,4 +1,5 @@
-/* Custom Fonts */
+/* ---------- Custom Fonts ---------- */
+
 @font-face {
     font-family: mycontentfont;
     src: url("../font/Oswald-Regular.ttf");
@@ -7,10 +8,11 @@
 @font-face {
     font-family: myheaderfont;
     src: url("../font/Migra-Extrabold.eot");
-    src: url("../font/Migra-Extrabold.otf") format("opentype"),
-         url("../font/Migra-Extrabold.ttf") format("truetype"),
-         url("../font/Migra-Extrabold.woff") format("woff"),
-         url("../font/Migra-Extrabold.woff2") format("woff2");
+    src:
+        url("../font/Migra-Extrabold.otf") format("opentype"),
+        url("../font/Migra-Extrabold.ttf") format("truetype"),
+        url("../font/Migra-Extrabold.woff") format("woff"),
+        url("../font/Migra-Extrabold.woff2") format("woff2");
 }
 
 @font-face {
@@ -18,15 +20,31 @@
     src: url("../font/Quicksand_Book_Oblique.otf");
 }
 
-/* Base Styles */
+/* ---------- Base Styles ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #eac08c;
-    cursor: url('../img/cursor.png'), auto;
+    cursor: url("../img/cursor.png"), auto;
 }
 
-h1, h2, h3, h4 {
+body.menu-open {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
     color: #9A3227;
     font-family: myheaderfont;
 }
@@ -40,34 +58,37 @@ a {
     color: #9A3227;
     font-weight: bold;
     text-decoration: none;
-    cursor: url('../img/pointer.png'), pointer;
+    cursor: url("../img/pointer.png"), pointer;
 }
 
+/* ---------- Page Header ---------- */
+
 .header {
-    padding: 30px 0px 50px 0px;
+    padding: 30px 0 50px;
 }
 
 .pageheader {
+    margin: 0;
+    padding: 0;
     font-size: 5em;
     text-align: center;
-    padding: 0;
-    margin: 0;
 }
 
-.pagedesc{
+.pagedesc {
+    margin: 0.5em 3em;
+    padding: 0;
     text-align: center;
     font-family: myheaderfont;
     font-size: 1.5em;
-    margin: 0.5em 3em .5em 3em;
-    padding: 0;
 }
 
-/* Navigation */
+/* ---------- Navigation ---------- */
+
 nav {
-    background-color: #eac08c;
-    width: 100%;
     position: relative;
     z-index: 1000;
+    width: 100%;
+    background-color: #eac08c;
 }
 
 #nav-bar {
@@ -79,7 +100,8 @@ nav {
     padding: 0.5em 1em;
 }
 
-/* Logo Styling */
+/* ---------- Logo ---------- */
+
 #logo {
     display: flex;
     align-items: center;
@@ -93,77 +115,97 @@ nav {
 
 #logo img {
     height: 30px;
-    margin-right: .3em;
+    margin-right: 0.3em;
 }
 
 #logo h3 {
     margin: 0;
-    font-size: .8em;
+    font-size: 0.8em;
 }
 
-/* Standard Navigation Menu (Larger Screens) */
+/* ---------- Desktop Navigation Menu ---------- */
+
 #nav-menu {
     display: flex;
-    list-style: none;
+    align-items: center;
     margin: 0;
     padding: 0;
-    align-items: center;
+    list-style: none;
     font-family: myheaderfont;
 }
 
 #nav-menu a {
-    text-decoration: none;
+    display: block;
+    padding: 0.5em;
     color: #9A3227;
-    padding: .5em;
+    text-decoration: none;
 }
 
 #nav-menu a:hover {
     color: #eac08c;
     -webkit-text-stroke: 1px #9A3227;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-/* Hamburger Menu Styling */
+/* ---------- Hamburger Button ---------- */
+
 .hamburger {
-    display: none; /* Hidden by default for larger screens */
-    font-size: 2em;
-    cursor: pointer;
+    display: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
     color: #9A3227;
+    cursor: url("../img/pointer.png"), pointer;
 }
+
+.hamburger img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* ---------- Scroll Up Button ---------- */
 
 .scroll-up-btn {
     all: unset;
     position: fixed;
-    bottom: 25px;
     right: 30px;
-    height: 45px;
-    width: 45px;
-    background-color: #9A3227;
-    border-radius: 50%;
+    bottom: 25px;
+    z-index: 900;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+
+    width: 45px;
+    height: 45px;
     padding: 0;
+
+    background-color: #9A3227;
     border: 2px solid #eac08c;
+    border-radius: 50%;
+
+    cursor: url("../img/pointer.png"), pointer;
 }
 
 .scroll-up-btn .fa-solid {
+    padding-left: 0;
     color: #eac08c;
-    font-size: 20px; /* Adjust to center the icon */
+    font-size: 20px;
     pointer-events: none;
-    padding-left: 13px;
 }
 
+/* ---------- Footer ---------- */
 
-/* Footer Styling */
 footer {
-    background-color: #eac08c;
-    padding: 1em 0;
     display: flex;
     flex-direction: column;
-    width: 100%;
     align-items: center;
+    width: 100%;
+    padding: 1em 0;
+    background-color: #eac08c;
     text-align: center;
 }
 
@@ -175,8 +217,8 @@ footer {
 }
 
 #footer h3 {
-    font-size: 2.5em;
     margin: 1em 0;
+    font-size: 2.5em;
 }
 
 #ftcontent {
@@ -187,102 +229,144 @@ footer {
 }
 
 #footer .fa-regular {
-    font-size: 3em;
-    color: #9A3227;
     margin: 1em 0;
+    color: #9A3227;
+    font-size: 3em;
 }
 
 #ftcontent p {
-    line-height: 1.5em;
     max-width: 500px;
+    line-height: 1.5em;
 }
 
 #ftcontent strong {
-    font-size: 1.2em;
     font-family: myheaderfont;
+    font-size: 1.2em;
 }
 
 #ftcontent a {
-    color: #9A3227;
     padding: 0.5em;
+    color: #9A3227;
     font-size: 1.5em;
 }
 
 #ftcontent a:hover {
     color: #eac08c;
     -webkit-text-stroke: 1px #9A3227;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 #copyright {
-    font-size: 0.9em;
-    color: #9A3227;
     margin-top: 1em;
+    color: #9A3227;
+    font-size: 0.9em;
 }
 
-/* Media Queries for Responsive Navigation */
+/* ---------- Tablet and Mobile ---------- */
+
 @media (max-width: 768px) {
     #nav-bar {
+        position: relative;
+        z-index: 10002;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
     }
 
-    /* Show Hamburger Icon on Smaller Screens */
     .hamburger {
+        position: relative;
+        z-index: 10004;
         display: block;
-        font-size: 1.5em;
-        cursor: url('../img/pointer.png'), pointer;
     }
 
-    /* Hide the nav menu by default on smaller screens */
+    .hamburger.active {
+        position: fixed;
+        top: 14px;
+        right: 16px;
+    }
+
     #nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #9A3227;
-        width: 100%;
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+
+        display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0.5em 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 999;
+        justify-content: center;
+        gap: 25px;
+
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        padding: 100px 20px 40px;
+
+        background-color: #9A3227;
+        list-style: none;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-20px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    #nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
     }
 
     #nav-menu li {
-        padding: .5em 0;
+        width: 100%;
+        padding: 0;
+        text-align: center;
     }
 
-    #nav-menu a{
+    #nav-menu a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+
         color: #eac08c;
-        padding: .5em 7em;
+        font-family: myheaderfont;
+        font-size: clamp(2.5rem, 10vw, 5rem);
+        line-height: 1;
     }
 
-    #nav-menu a:hover{
+    #nav-menu a:hover {
         color: #9A3227;
         background-color: #eac08c;
-        transition: .5s;
+        -webkit-text-stroke: 0;
     }
 
-    /* Show menu when it’s active */
-    #nav-menu.active {
-        display: flex;
+    .pageheader {
+        font-size: 4em;
     }
 
-    /* Adjust Footer for Mobile */
+    .pagedesc {
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+
+    /* ---------- Mobile Footer ---------- */
+
     #footer h3 {
+        margin: 0.21em;
         font-size: 2em;
-        margin: .21em;
     }
 
     #footer .fa-regular {
-        font-size: 5em;
         margin: 0;
+        font-size: 5em;
     }
 
-    #ftcontent p{
+    #ftcontent p {
         margin-bottom: 2em;
     }
 
@@ -292,5 +376,30 @@ footer {
 
     #ftcontent a {
         font-size: 2em;
+    }
+}
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width: 480px) {
+    .pageheader {
+        font-size: 3.2em;
+    }
+
+    .pagedesc {
+        font-size: 1.2em;
+    }
+
+    #nav-menu {
+        gap: 20px;
+    }
+
+    #nav-menu a {
+        font-size: clamp(2.2rem, 12vw, 4rem);
+    }
+
+    .scroll-up-btn {
+        right: 18px;
+        bottom: 18px;
     }
 }

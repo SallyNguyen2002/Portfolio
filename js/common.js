@@ -9,16 +9,47 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-
-    // Toggle navigation menu (for mobile)
-    function toggleMenu() {
+    // Open navigation menu for mobile version
+        const hamburger = document.querySelector(".hamburger");
         const menu = document.getElementById("nav-menu");
+        const menuIcon = document.querySelector(".menu-icon");
 
-        if (menu) {
-            menu.classList.toggle("active");
-        }
-    }
+        if (!hamburger || !menu || !menuIcon) return;
 
+        const menuImage = menuIcon.dataset.menu;
+        const closeImage = menuIcon.dataset.close;
+
+        hamburger.addEventListener("click", () => {
+            const isOpen = menu.classList.toggle("active");
+
+            hamburger.classList.toggle("active", isOpen);
+            document.body.classList.toggle("menu-open", isOpen);
+
+            menuIcon.src = isOpen ? closeImage : menuImage;
+            hamburger.setAttribute("aria-expanded", isOpen);
+        });
+
+        menu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("active");
+                hamburger.classList.remove("active");
+                document.body.classList.remove("menu-open");
+
+                menuIcon.src = menuImage;
+                hamburger.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                menu.classList.remove("active");
+                hamburger.classList.remove("active");
+                document.body.classList.remove("menu-open");
+
+                menuIcon.src = menuImage;
+                hamburger.setAttribute("aria-expanded", "false");
+            }
+        });
 
     // Back to Top Button Functionality
     const scrollToTopBtn = document.querySelector(".scroll-up-btn");
