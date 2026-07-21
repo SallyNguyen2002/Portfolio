@@ -1,4 +1,6 @@
-/* ---------- Custom Fonts ---------- */
+/* ==================================================
+   CUSTOM FONTS
+================================================== */
 
 @font-face {
     font-family: mycontentfont;
@@ -20,7 +22,10 @@
     src: url("../font/Quicksand_Book_Oblique.otf");
 }
 
-/* ---------- Base Styles ---------- */
+
+/* ==================================================
+   RESET AND BASE STYLES
+================================================== */
 
 * {
     box-sizing: border-box;
@@ -33,12 +38,17 @@ html {
 body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     background-color: #eac08c;
     cursor: url("../img/cursor.png"), auto;
 }
 
 body.menu-open {
     overflow: hidden;
+}
+
+img {
+    max-width: 100%;
 }
 
 h1,
@@ -61,28 +71,50 @@ a {
     cursor: url("../img/pointer.png"), pointer;
 }
 
-/* ---------- Page Header ---------- */
+
+/* ==================================================
+   GENERAL CONTAINERS
+================================================== */
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+
+/* ==================================================
+   PAGE HEADER
+================================================== */
 
 .header {
-    padding: 30px 0 50px;
+    padding: 60px 20px 80px;
 }
 
 .pageheader {
     margin: 0;
     padding: 0;
     font-size: 5em;
+    line-height: 1;
     text-align: center;
 }
 
 .pagedesc {
-    margin: 0.5em 3em;
+    margin: 0.75em 3em 0;
     padding: 0;
     text-align: center;
     font-family: myheaderfont;
     font-size: 1.5em;
+    line-height: 1.3;
 }
 
-/* ---------- Navigation ---------- */
+
+/* ==================================================
+   NAVIGATION
+================================================== */
 
 nav {
     position: relative;
@@ -100,7 +132,10 @@ nav {
     padding: 0.5em 1em;
 }
 
-/* ---------- Logo ---------- */
+
+/* ==================================================
+   LOGO
+================================================== */
 
 #logo {
     display: flex;
@@ -114,6 +149,7 @@ nav {
 }
 
 #logo img {
+    display: block;
     height: 30px;
     margin-right: 0.3em;
 }
@@ -121,9 +157,13 @@ nav {
 #logo h3 {
     margin: 0;
     font-size: 0.8em;
+    line-height: 1;
 }
 
-/* ---------- Desktop Navigation Menu ---------- */
+
+/* ==================================================
+   DESKTOP NAVIGATION MENU
+================================================== */
 
 #nav-menu {
     display: flex;
@@ -134,20 +174,27 @@ nav {
     font-family: myheaderfont;
 }
 
+#nav-menu li {
+    margin: 0;
+    padding: 0;
+}
+
 #nav-menu a {
     display: block;
     padding: 0.5em;
     color: #9A3227;
-    text-decoration: none;
+    transition: 0.5s;
 }
 
 #nav-menu a:hover {
     color: #eac08c;
     -webkit-text-stroke: 1px #9A3227;
-    transition: 0.5s;
 }
 
-/* ---------- Hamburger Button ---------- */
+
+/* ==================================================
+   HAMBURGER BUTTON
+================================================== */
 
 .hamburger {
     display: none;
@@ -155,7 +202,6 @@ nav {
     padding: 0;
     border: none;
     background: transparent;
-    color: #9A3227;
     cursor: url("../img/pointer.png"), pointer;
 }
 
@@ -166,7 +212,10 @@ nav {
     object-fit: contain;
 }
 
-/* ---------- Scroll Up Button ---------- */
+
+/* ==================================================
+   SCROLL TO TOP BUTTON
+================================================== */
 
 .scroll-up-btn {
     all: unset;
@@ -174,30 +223,28 @@ nav {
     right: 30px;
     bottom: 25px;
     z-index: 900;
-
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
-
     width: 45px;
     height: 45px;
-    padding: 0;
-
     background-color: #9A3227;
     border: 2px solid #eac08c;
     border-radius: 50%;
-
     cursor: url("../img/pointer.png"), pointer;
 }
 
 .scroll-up-btn .fa-solid {
-    padding-left: 0;
+    padding: 0;
     color: #eac08c;
     font-size: 20px;
     pointer-events: none;
 }
 
-/* ---------- Footer ---------- */
+
+/* ==================================================
+   FOOTER
+================================================== */
 
 footer {
     display: flex;
@@ -219,6 +266,13 @@ footer {
 #footer h3 {
     margin: 1em 0;
     font-size: 2.5em;
+    line-height: 1.1;
+}
+
+#footer .fa-regular {
+    margin: 1em 0;
+    color: #9A3227;
+    font-size: 3em;
 }
 
 #ftcontent {
@@ -228,14 +282,9 @@ footer {
     text-align: center;
 }
 
-#footer .fa-regular {
-    margin: 1em 0;
-    color: #9A3227;
-    font-size: 3em;
-}
-
 #ftcontent p {
     max-width: 500px;
+    margin: 0;
     line-height: 1.5em;
 }
 
@@ -244,33 +293,54 @@ footer {
     font-size: 1.2em;
 }
 
+#socialmedia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
 #ftcontent a {
     padding: 0.5em;
     color: #9A3227;
     font-size: 1.5em;
+    transition: 0.5s;
 }
 
 #ftcontent a:hover {
     color: #eac08c;
     -webkit-text-stroke: 1px #9A3227;
-    transition: 0.5s;
 }
 
 #copyright {
-    margin-top: 1em;
+    margin: 1em 0 0;
     color: #9A3227;
     font-size: 0.9em;
 }
 
-/* ---------- Tablet and Mobile ---------- */
+
+/* ==================================================
+   TABLET AND MOBILE
+================================================== */
 
 @media (max-width: 768px) {
+    .header {
+        padding: 50px 20px 60px;
+    }
+
+    .pageheader {
+        font-size: 4em;
+    }
+
+    .pagedesc {
+        margin-right: 1em;
+        margin-left: 1em;
+        font-size: 1.3em;
+    }
+
     #nav-bar {
         position: relative;
         z-index: 10002;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
     }
 
     .hamburger {
@@ -283,32 +353,29 @@ footer {
         position: fixed;
         top: 14px;
         right: 16px;
+        z-index: 10005;
     }
 
     #nav-menu {
         position: fixed;
         inset: 0;
         z-index: 10000;
-
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 25px;
-
-        width: 100%;
+        width: 100vw;
         min-height: 100vh;
+        min-height: 100dvh;
         margin: 0;
         padding: 100px 20px 40px;
-
         background-color: #9A3227;
         list-style: none;
-
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
         transform: translateY(-20px);
-
         transition:
             opacity 0.3s ease,
             visibility 0.3s ease,
@@ -323,7 +390,9 @@ footer {
     }
 
     #nav-menu li {
+        display: block;
         width: 100%;
+        margin: 0;
         padding: 0;
         text-align: center;
     }
@@ -332,11 +401,13 @@ footer {
         display: block;
         width: 100%;
         padding: 10px;
-
         color: #eac08c;
         font-family: myheaderfont;
         font-size: clamp(2.5rem, 10vw, 5rem);
         line-height: 1;
+        opacity: 1;
+        visibility: visible;
+        -webkit-text-stroke: 0;
     }
 
     #nav-menu a:hover {
@@ -344,17 +415,6 @@ footer {
         background-color: #eac08c;
         -webkit-text-stroke: 0;
     }
-
-    .pageheader {
-        font-size: 4em;
-    }
-
-    .pagedesc {
-        margin-right: 1em;
-        margin-left: 1em;
-    }
-
-    /* ---------- Mobile Footer ---------- */
 
     #footer h3 {
         margin: 0.21em;
@@ -368,6 +428,7 @@ footer {
 
     #ftcontent p {
         margin-bottom: 2em;
+        padding: 0 20px;
     }
 
     #ftcontent strong {
@@ -379,19 +440,30 @@ footer {
     }
 }
 
-/* ---------- Small Phones ---------- */
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
 
 @media (max-width: 480px) {
+    .header {
+        padding: 40px 15px 50px;
+    }
+
     .pageheader {
         font-size: 3.2em;
     }
 
     .pagedesc {
-        font-size: 1.2em;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+        font-size: 1.15em;
     }
 
     #nav-menu {
         gap: 20px;
+        padding-right: 15px;
+        padding-left: 15px;
     }
 
     #nav-menu a {
@@ -401,5 +473,11 @@ footer {
     .scroll-up-btn {
         right: 18px;
         bottom: 18px;
+        width: 42px;
+        height: 42px;
+    }
+
+    #socialmedia {
+        flex-wrap: wrap;
     }
 }

@@ -1,16 +1,23 @@
+/* ==================================================
+   HOMEPAGE BASE
+================================================== */
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
     min-height: 100vh;
     margin: 0;
-    transform-style: preserve-3d;
     padding: 0;
+}
+
+nav,
+section,
+footer,
+.tickerwrapper {
+    width: 100%;
 }
 
 section {
@@ -18,30 +25,33 @@ section {
     padding: 0;
 }
 
-/* Welcome Banner */
+
+/* ==================================================
+   WELCOME BANNER
+================================================== */
 
 #welcome {
     display: flex;
-    background-color: #eac08c;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 35em;
-    text-align: center;
     padding: 1em;
-}
-
-#greeting {
-    font-size: 1.5em;
+    background-color: #eac08c;
+    text-align: center;
 }
 
 #welcome h1 {
     margin: 0;
 }
 
+#greeting {
+    font-size: 1.5em;
+}
+
 #intro-text {
-    -webkit-text-stroke: 2px #9A3227;
     color: #eac08c;
     font-size: 5em;
+    -webkit-text-stroke: 2px #9A3227;
 }
 
 #portfolio-text {
@@ -49,165 +59,189 @@ section {
     font-size: 8em;
 }
 
-/* Running Banner */
+
+/* ==================================================
+   RUNNING BANNER
+================================================== */
+
 .tickerwrapper {
     position: relative;
     top: 30px;
     left: 0;
-    background: #9A3227;
     width: 100%;
     height: 50px;
-    overflow: hidden;
-    cursor: pointer;
-    color: #eac08c;
     padding: 0 10px;
-    cursor: url('../img/pointer.png'), pointer;
+    overflow: hidden;
+    background-color: #9A3227;
+    color: #eac08c;
+    cursor: url("../img/pointer.png"), pointer;
 }
 
-ul.list {
+.tickerwrapper ul.list {
     position: relative;
     display: inline-block;
-    list-style: none;
-    padding: 0;
     margin: 0.6em;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
 }
 
-ul.list.cloned {
+.tickerwrapper ul.list.cloned {
     position: absolute;
     top: 0;
     left: 0;
 }
 
-ul.list li {
+.tickerwrapper ul.list li {
     float: left;
     padding-left: 50px;
     font-size: 1.5em;
 }
 
-/* Introduction */
+
+/* ==================================================
+   INTRODUCTION SECTION
+================================================== */
+
 #intro {
     display: flex;
-    background-color: white;
-    padding: 2em;
-    border-radius: 8px;
-    gap: 2em;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    gap: 2em;
     max-width: 70em;
+    margin: 10em auto;
+    padding: 2em;
+    background-color: white;
+    border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 10em 0;
+}
+
+#intro .image {
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
 }
 
 #intro .content {
-    flex: 1;
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
 }
 
 #intro h1 {
-    padding: 0;
     margin: 0;
+    padding: 0;
     font-size: 5em;
 }
 
 #intro .content p {
+    margin-bottom: 1.5em;
     font-size: 1em;
     line-height: 1.6;
-    margin-bottom: 1.5em;
 }
 
 #intro .button {
     display: inline-block;
+    width: 10em;
     padding: 0.8em 1.5em;
     background-color: #9A3227;
     color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: none;
     border-radius: 5px;
     font-size: 0.9em;
-    width: 10em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
 }
 
 #intro .button:hover {
     background-color: #eac08c;
     color: #9A3227;
-    transition: 0.5s;
 }
 
-/* Project Section */
+
+/* ==================================================
+   PROJECT SECTION
+================================================== */
+
 #indexproj {
     display: flex;
     flex-direction: column;
-    background-color: #9A3227;
-    justify-content: center;
     align-items: center;
-    width: 100vw;
+    justify-content: center;
+    width: 100%;
     padding: 2em 0;
+    background-color: #9A3227;
     color: white;
 }
 
 #indexproj h2 {
-    color: #eac08c;
     margin-bottom: 0;
+    color: #eac08c;
     font-size: 5em;
 }
 
 #indexproj p {
+    margin-bottom: 1em;
     color: white;
     text-align: center;
-    margin-bottom: 1em;
 }
 
-#indexproj a {
+#indexproj > a {
+    margin-top: 20px;
+    padding: 5px 50px;
     color: #eac08c;
-    font-weight: bold;
     border: 1px solid #eac08c;
     border-radius: 10px;
-    padding: 5px 50px;
-    margin-top: 20px;
     font-size: 1.25em;
-}
-
-#indexproj a:hover {
-    color: #9A3227;
-    background-color: #eac08c;
+    font-weight: bold;
     transition: 0.5s;
 }
 
-.gallery {
+#indexproj > a:hover {
+    background-color: #eac08c;
+    color: #9A3227;
+}
+
+#indexproj .gallery {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     padding: 20px;
 }
 
-.gallery div {
+#indexproj .gallery div {
     width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
     border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.gallery img {
+#indexproj .gallery img {
+    display: block;
     width: 100%;
     height: auto;
 }
 
-/* Responsive Styles */
+
+/* ==================================================
+   TABLET
+================================================== */
+
 @media (max-width: 768px) {
     #welcome {
         height: auto;
-        padding: 2em 1em;
-    }
-
-    #intro-text {
-        font-size: 3em;
+        padding: 5em 1em;
     }
 
     #greeting {
         font-size: 1em;
+    }
+
+    #intro-text {
+        font-size: 3em;
     }
 
     #portfolio-text {
@@ -216,13 +250,23 @@ ul.list li {
 
     #intro {
         flex-direction: column;
+        width: calc(100% - 30px);
+        margin: 5em auto;
         padding: 1em;
-        margin: 5em 0;
+    }
+
+    #intro .image {
+        width: 100%;
+        max-width: 400px;
     }
 
     #intro h1 {
         font-size: 3em;
         text-align: center;
+    }
+
+    #intro .content {
+        align-items: center;
     }
 
     #intro .content p {
@@ -233,7 +277,6 @@ ul.list li {
     #intro .button {
         width: auto;
         font-size: 0.9em;
-        text-align: center;
     }
 
     #indexproj h2 {
@@ -241,25 +284,30 @@ ul.list li {
     }
 
     #indexproj p {
-        font-size: 1em;
         padding: 0 1em;
-    }
-
-    #indexproj a {
         font-size: 1em;
-        padding: 0.5em 2em;
     }
 
-    .gallery div {
+    #indexproj > a {
+        padding: 0.5em 2em;
+        font-size: 1em;
+    }
+
+    #indexproj .gallery div {
         width: 100%;
         max-width: 200px;
     }
 
-    ul.list li {
-        font-size: 1em;
+    .tickerwrapper ul.list li {
         padding-left: 20px;
+        font-size: 1em;
     }
 }
+
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
 
 @media (max-width: 480px) {
     #intro-text {
@@ -282,8 +330,8 @@ ul.list li {
         font-size: 0.9em;
     }
 
-    #indexproj a {
-        font-size: 0.9em;
+    #indexproj > a {
         padding: 0.5em 1.5em;
+        font-size: 0.9em;
     }
 }
