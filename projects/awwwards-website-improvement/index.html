@@ -22,14 +22,24 @@
         <nav>
             <div class="container-fluid" id="nav-bar">
                 <div id="logo">
-                    <a href="../../">
+                    <a href="../">
                         <img src="../../img/Logo ID Red.png" alt="a logo of my branding">
                         <h3>Sally<br>Nguyen</h3>
                     </a>
                 </div>
-                <div class="hamburger" onclick="toggleMenu()">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
+                <button
+                    class="hamburger"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-controls="nav-menu"
+                    aria-expanded="false">
+                    <img
+                        class="menu-icon"
+                        src="../../img/icons/menu.png"
+                        data-menu="../../img/icons/menu.png"
+                        data-close="../../img/icons/x.png"
+                        alt="Menu">
+                </button>
                 <ul id="nav-menu">
                     <li><a href="../../">Home</a></li>
                     <li><a href="../../about/">About</a></li>
