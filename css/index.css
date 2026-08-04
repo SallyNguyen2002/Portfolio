@@ -285,6 +285,14 @@ section {
         font-size: 1em;
     }
 
+    #indexproj .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #indexproj .gallery img {
+       height: 240px;
+    }
+
     .tickerwrapper ul.list li {
         padding-left: 20px;
         font-size: 1em;
