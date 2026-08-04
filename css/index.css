@@ -205,24 +205,16 @@ section {
 }
 
 #indexproj .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-#indexproj .gallery div {
-    width: 300px;
-    overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
 #indexproj .gallery img {
-    display: block;
     width: 100%;
     height: auto;
+    display: block;
+    border-radius: 6px;
 }
 
 
@@ -293,11 +285,6 @@ section {
         font-size: 1em;
     }
 
-    #indexproj .gallery div {
-        width: 100%;
-        max-width: 200px;
-    }
-
     .tickerwrapper ul.list li {
         padding-left: 20px;
         font-size: 1em;
@@ -320,6 +307,15 @@ section {
 
     #intro h1 {
         font-size: 2.5em;
+    }
+
+    #indexproj .gallery {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    #indexproj .gallery img {
+       height: auto;
     }
 
     #indexproj h2 {
