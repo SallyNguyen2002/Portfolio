@@ -212,6 +212,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    margin:2em;
 }
 
 #indexproj .gallery img {
@@ -295,6 +296,7 @@ section {
 
     #indexproj .gallery img {
        height: 240px;
+       width: auto;
     }
 
     .tickerwrapper ul.list li {
