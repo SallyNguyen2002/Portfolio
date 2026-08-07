@@ -29,7 +29,7 @@ img {
     margin: 0 auto;
 }
 
-.pagedesc {
+.aboutdesc {
     display: flex;
     margin: 0;
     background-color: #9A3227;
@@ -38,6 +38,7 @@ img {
     text-align: center;
     justify-content: center;
     align-items: center;
+    font-size: 1.5em;
 }
 
 .fact img{
@@ -74,7 +75,7 @@ img {
         font-size: 1em;
     }
 
-    .pagedesc {
+    .aboutdesc {
         padding: 30px;
         font-size: 1em;
     }
@@ -104,7 +105,7 @@ img {
         font-size: 0.9em;
     }
 
-    .pagedesc {
+    .aboutdesc {
         padding: 20px;
         font-size: 0.9em;
     }
