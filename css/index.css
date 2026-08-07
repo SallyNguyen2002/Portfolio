@@ -299,6 +299,10 @@ section {
        width: auto;
     }
 
+    .tickerwrapper {
+        height: 40px;
+    }
+
     .tickerwrapper ul.list li {
         padding-left: 20px;
         font-size: 1em;
