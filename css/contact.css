@@ -232,7 +232,8 @@ body {
 
     .formrow {
         grid-template-columns: 1fr;
-        gap: 0.5em;
+        gap: 0em;
+        margin-bottom: 1em;;
     }
 
     .formrow label {
