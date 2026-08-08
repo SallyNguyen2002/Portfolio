@@ -656,7 +656,7 @@ document.addEventListener("DOMContentLoaded", () => {
     */
 
     const trailLife =
-        1400;
+        2500;
 
     /*
         Ignore extremely tiny mouse
@@ -671,63 +671,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       TRACK CURSOR
+    TRACK CURSOR + TOUCH
+    ========================================= */
+
+    function addDrawingPoint(x, y) {
+
+        if (
+            lastX !== null &&
+            lastY !== null
+        ) {
+
+            const distance = Math.hypot(
+                x - lastX,
+                y - lastY
+            );
+
+            if (distance < minimumDistance) {
+                return;
+            }
+        }
+
+
+        const color =
+            getDrawingColor(x, y);
+
+
+        trailPoints.push({
+            x: x,
+            y: y,
+            time: performance.now(),
+            color: color
+        });
+
+
+        lastX = x;
+        lastY = y;
+    }
+
+
+    /* =========================================
+    MOUSE / PEN / TOUCH
     ========================================= */
 
     document.addEventListener(
-        "mousemove",
+        "pointermove",
         event => {
 
-            const x =
-                event.clientX;
+            /*
+                Desktop mouse:
+                draw whenever cursor moves.
 
-            const y =
-                event.clientY;
-
+                Touch:
+                only draw while finger is touching.
+            */
 
             if (
-                lastX !== null &&
-                lastY !== null
+                event.pointerType === "touch" &&
+                event.pressure === 0
             ) {
-
-                const distance =
-                    Math.hypot(
-                        x - lastX,
-                        y - lastY
-                    );
-
-                if (
-                    distance <
-                    minimumDistance
-                ) {
-                    return;
-                }
+                return;
             }
 
 
-            const color =
-                getDrawingColor(
-                    x,
-                    y
-                );
+            addDrawingPoint(
+                event.clientX,
+                event.clientY
+            );
 
-
-            trailPoints.push({
-                x: x,
-                y: y,
-                time: performance.now(),
-                color: color
-            });
-
-
-            lastX = x;
-            lastY = y;
         }
     );
 
 
+    /* Reset when interaction ends */
+
     document.addEventListener(
-        "mouseleave",
+        "pointerup",
         () => {
 
             lastX = null;
@@ -736,6 +754,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     );
 
+
+    document.addEventListener(
+        "pointercancel",
+        () => {
+
+            lastX = null;
+            lastY = null;
+
+        }
+    );
+
+
+    document.addEventListener(
+        "pointerleave",
+        () => {
+
+            lastX = null;
+            lastY = null;
+
+        }
+);
 
     /* =========================================
        DRAW + FADE
