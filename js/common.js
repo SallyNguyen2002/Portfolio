@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
             main .line-text,
             main button:not(.hamburger):not(.scroll-up-btn),
             main .button,
-            main form
+            .formrow
         `)
     );
 
