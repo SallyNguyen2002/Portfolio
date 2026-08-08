@@ -344,9 +344,9 @@ footer {
 }
 
 
-/* ==================================================
-   SCROLL REVEAL
-================================================== */
+/* =========================================
+   GLOBAL SCROLL REVEAL
+========================================= */
 
 .reveal {
     opacity: 0;
@@ -359,43 +359,47 @@ footer {
     transition-delay: var(--delay, 0s);
 }
 
+
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
 
-/* Slightly stronger movement for headings */
+/* Headings move slightly farther */
 
 h1.reveal,
 h2.reveal,
 h3.reveal,
-h4.reveal {
+h4.reveal,
+h5.reveal,
+h6.reveal {
     transform: translateY(45px);
 }
+
 
 h1.reveal.active,
 h2.reveal.active,
 h3.reveal.active,
-h4.reveal.active {
+h4.reveal.active,
+h5.reveal.active,
+h6.reveal.active {
     transform: translateY(0);
 }
 
 
-/* ==================================================
-   ACCESSIBILITY
-================================================== */
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
 
     .reveal {
         opacity: 1;
         transform: none;
         transition: none;
     }
+
 }
 
 

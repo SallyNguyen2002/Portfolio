@@ -239,93 +239,155 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       STAGGERED SCROLL REVEAL
+    GLOBAL STAGGERED SCROLL REVEAL
     ========================================= */
 
-    const revealSelector =
-        "section h1, section h2, section h3, section h4, section p, section .button";
+    const revealElements = Array.from(
+        document.querySelectorAll(`
+            main h1,
+            main h2,
+            main h3,
+            main h4,
+            main h5,
+            main h6,
+            main p,
+            main .line-text,
+            main button:not(.hamburger):not(.scroll-up-btn),
+            main .button
+        `)
+    );
 
 
-    const revealElements =
-        document.querySelectorAll(
-            revealSelector
-        );
-
+    /* Add hidden state to everything */
 
     revealElements.forEach(element => {
-
         element.classList.add("reveal");
-
-        const section =
-            element.closest("section");
+    });
 
 
-        if (section) {
+    /* =========================================
+    CHECK IF ELEMENT IS ON SCREEN
+    ========================================= */
 
-            const sectionElements =
-                Array.from(
-                    section.querySelectorAll(
-                        "h1, h2, h3, h4, p, .button"
-                    )
+    function isVisible(element) {
+
+        const rect = element.getBoundingClientRect();
+
+        return (
+            rect.top < window.innerHeight &&
+            rect.bottom > 0
+        );
+    }
+
+
+    /* =========================================
+    STAGGER FUNCTION
+    ========================================= */
+
+    function staggerElements(elements) {
+
+        const sortedElements = [...elements].sort((a, b) => {
+
+            const aRect = a.getBoundingClientRect();
+            const bRect = b.getBoundingClientRect();
+
+            /* Top to bottom */
+            if (Math.abs(aRect.top - bRect.top) > 10) {
+                return aRect.top - bRect.top;
+            }
+
+            /* Left to right if same row */
+            return aRect.left - bRect.left;
+
+        });
+
+
+        sortedElements.forEach((element, index) => {
+
+            setTimeout(() => {
+
+                element.classList.add("active");
+
+            }, index * 180);
+
+        });
+
+    }
+
+
+    /* =========================================
+    INITIAL SCREEN
+    ========================================= */
+
+    /*
+        Wait until browser has applied .reveal
+        before showing anything.
+    */
+
+    requestAnimationFrame(() => {
+
+        requestAnimationFrame(() => {
+
+            const initiallyVisible =
+                revealElements.filter(element =>
+                    isVisible(element)
                 );
 
+            staggerElements(initiallyVisible);
 
-            const position =
-                sectionElements.indexOf(
-                    element
-                );
-
-
-            element.style.setProperty(
-                "--delay",
-                `${position * 0.12}s`
-            );
-        }
+        });
 
     });
 
 
     /* =========================================
-       REVEAL OBSERVER
+    SCROLL REVEAL
     ========================================= */
 
-    const revealObserver =
-        new IntersectionObserver(
-            (entries, observer) => {
+    const observer = new IntersectionObserver(
+        entries => {
 
-                entries.forEach(entry => {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target
-                            .classList
-                            .add("active");
+            const newlyVisible = entries
+                .filter(entry =>
+                    entry.isIntersecting &&
+                    !entry.target.classList.contains("active")
+                )
+                .map(entry => entry.target);
 
 
-                        observer.unobserve(
-                            entry.target
-                        );
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.15
-            }
-        );
+            if (newlyVisible.length === 0) return;
 
 
-    document
-        .querySelectorAll(".reveal")
-        .forEach(element => {
+            /*
+                Reveal everything that entered
+                during this observer update
+            */
 
-            revealObserver.observe(
-                element
-            );
+            staggerElements(newlyVisible);
 
-        });
 
+            newlyVisible.forEach(element => {
+                observer.unobserve(element);
+            });
+
+        },
+
+        {
+            threshold: 0.1,
+            rootMargin: "0px 0px -5% 0px"
+        }
+    );
+
+
+    /* =========================================
+    OBSERVE BELOW-SCREEN ELEMENTS
+    ========================================= */
+
+    revealElements.forEach(element => {
+
+        if (!isVisible(element)) {
+            observer.observe(element);
+        }
+
+    });
 });
