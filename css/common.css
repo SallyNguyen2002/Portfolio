@@ -97,7 +97,7 @@ a {
     width: 100vw;
     height: 100vh;
 
-    z-index: 9998;
+    z-index: 99999;
 
     pointer-events: none;
 }
@@ -107,15 +107,6 @@ main,
 footer {
     position: relative;
     z-index: 1;
-}
-
-
-/* Hide cursor interaction on touch screens */
-
-@media (hover: none) {
-    #cursor-glow {
-        display: none;
-    }
 }
 
 

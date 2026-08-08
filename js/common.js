@@ -132,11 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (currentYearElement) {
 
-        const currentYear =
-            new Date().getFullYear();
-
         currentYearElement.textContent =
-            currentYear;
+            new Date().getFullYear();
     }
 
 
@@ -150,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const welcomeContainer =
         document.getElementById("welcome");
 
-
     if (greetingElement && welcomeContainer) {
 
         const currentHour =
@@ -158,7 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let greetingText;
         let cssClass;
-
 
         if (currentHour < 12) {
 
@@ -174,9 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             greetingText = "Good evening!";
             cssClass = "evening";
-
         }
-
 
         greetingElement.textContent =
             greetingText;
@@ -193,7 +186,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const alertButton =
         document.getElementById("btn-alert");
-
 
     if (alertButton) {
 
@@ -251,7 +243,6 @@ document.addEventListener("DOMContentLoaded", () => {
         `)
     );
 
-
     revealElements.forEach(element => {
         element.classList.add("reveal");
     });
@@ -265,7 +256,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("main img")
     );
 
-
     revealImages.forEach(image => {
         image.classList.add("reveal-image");
     });
@@ -277,7 +267,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function isVisible(element) {
 
-        const rect = element.getBoundingClientRect();
+        const rect =
+            element.getBoundingClientRect();
 
         return (
             rect.top < window.innerHeight &&
@@ -292,29 +283,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function staggerElements(elements) {
 
-        const sortedElements = [...elements].sort((a, b) => {
+        const sortedElements =
+            [...elements].sort((a, b) => {
 
-            const aRect = a.getBoundingClientRect();
-            const bRect = b.getBoundingClientRect();
+                const aRect =
+                    a.getBoundingClientRect();
 
-            if (Math.abs(aRect.top - bRect.top) > 10) {
-                return aRect.top - bRect.top;
+                const bRect =
+                    b.getBoundingClientRect();
+
+                if (
+                    Math.abs(
+                        aRect.top - bRect.top
+                    ) > 10
+                ) {
+                    return aRect.top - bRect.top;
+                }
+
+                return aRect.left - bRect.left;
+            });
+
+
+        sortedElements.forEach(
+            (element, index) => {
+
+                setTimeout(() => {
+
+                    element.classList.add(
+                        "active"
+                    );
+
+                }, index * 180);
+
             }
-
-            return aRect.left - bRect.left;
-
-        });
-
-
-        sortedElements.forEach((element, index) => {
-
-            setTimeout(() => {
-
-                element.classList.add("active");
-
-            }, index * 180);
-
-        });
+        );
     }
 
 
@@ -326,11 +328,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         requestAnimationFrame(() => {
 
-            const visibleText = revealElements.filter(
-                element => isVisible(element)
-            );
+            const visibleText =
+                revealElements.filter(
+                    element =>
+                        isVisible(element)
+                );
 
-            staggerElements(visibleText);
+            staggerElements(
+                visibleText
+            );
 
         });
 
@@ -341,38 +347,57 @@ document.addEventListener("DOMContentLoaded", () => {
        TEXT SCROLL OBSERVER
     ========================================= */
 
-    const textObserver = new IntersectionObserver(
-        entries => {
+    const textObserver =
+        new IntersectionObserver(
+            entries => {
 
-            const newlyVisible = entries
-                .filter(entry =>
-                    entry.isIntersecting &&
-                    !entry.target.classList.contains("active")
-                )
-                .map(entry => entry.target);
+                const newlyVisible =
+                    entries
+                        .filter(entry =>
+                            entry.isIntersecting &&
+                            !entry.target.classList.contains(
+                                "active"
+                            )
+                        )
+                        .map(
+                            entry =>
+                                entry.target
+                        );
 
+                if (
+                    newlyVisible.length === 0
+                ) {
+                    return;
+                }
 
-            if (newlyVisible.length === 0) return;
+                staggerElements(
+                    newlyVisible
+                );
 
+                newlyVisible.forEach(
+                    element => {
 
-            staggerElements(newlyVisible);
+                        textObserver.unobserve(
+                            element
+                        );
 
+                    }
+                );
 
-            newlyVisible.forEach(element => {
-                textObserver.unobserve(element);
-            });
-
-        },
-        {
-            threshold: 0.1
-        }
-    );
+            },
+            {
+                threshold: 0.1
+            }
+        );
 
 
     revealElements.forEach(element => {
 
         if (!isVisible(element)) {
-            textObserver.observe(element);
+
+            textObserver.observe(
+                element
+            );
         }
 
     });
@@ -382,85 +407,99 @@ document.addEventListener("DOMContentLoaded", () => {
        IMAGE SCROLL OBSERVER
     ========================================= */
 
-    const imageObserver = new IntersectionObserver(
-        entries => {
+    const imageObserver =
+        new IntersectionObserver(
+            entries => {
 
-            entries.forEach(entry => {
+                entries.forEach(entry => {
 
-                if (entry.isIntersecting) {
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                    entry.target.classList.add("active");
-
-                    imageObserver.unobserve(
                         entry.target
-                    );
+                            .classList
+                            .add("active");
 
-                }
+                        imageObserver.unobserve(
+                            entry.target
+                        );
+                    }
 
-            });
+                });
 
-        },
-        {
-            threshold: 0.15
-        }
-    );
+            },
+            {
+                threshold: 0.15
+            }
+        );
 
 
     /* =========================================
        INITIAL IMAGES + SCROLL IMAGES
     ========================================= */
 
-    revealImages.forEach((image, index) => {
+    revealImages.forEach(
+        (image, index) => {
 
-        if (isVisible(image)) {
+            if (isVisible(image)) {
 
-            /*
-                Give browser time to render
-                the smaller/transparent image first.
-            */
+                setTimeout(() => {
 
-            setTimeout(() => {
+                    image.classList.add(
+                        "active"
+                    );
 
-                image.classList.add("active");
+                }, 250 + (index * 120));
 
-            }, 250 + (index * 120));
+            } else {
 
-        } else {
-
-            imageObserver.observe(image);
+                imageObserver.observe(
+                    image
+                );
+            }
 
         }
-
-    });
-
-/* =========================================
-    CURSOR DRAWING CANVAS
-    ========================================= */
-
-    const drawingCanvas = document.createElement("canvas");
-
-    drawingCanvas.id = "drawing-canvas";
-
-    document.body.appendChild(drawingCanvas);
-
-    const ctx = drawingCanvas.getContext("2d");
+    );
 
 
     /* =========================================
-    BRAND COLORS
+       CURSOR DRAWING CANVAS
     ========================================= */
 
-    const RED = "#9A3227";
-    const BEIGE = "#eac08c";
+    const drawingCanvas =
+        document.createElement("canvas");
+
+    drawingCanvas.id =
+        "drawing-canvas";
+
+    document.body.appendChild(
+        drawingCanvas
+    );
+
+    const ctx =
+        drawingCanvas.getContext("2d");
 
 
     /* =========================================
-    CANVAS SIZE
+       BRAND COLORS
+    ========================================= */
+
+    const RED =
+        "#9A3227";
+
+    const BEIGE =
+        "#eac08c";
+
+
+    /* =========================================
+       CANVAS SIZE
     ========================================= */
 
     function resizeDrawingCanvas() {
 
-        const dpr = window.devicePixelRatio || 1;
+        const dpr =
+            window.devicePixelRatio || 1;
 
         drawingCanvas.width =
             window.innerWidth * dpr;
@@ -495,83 +534,155 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-    FIND BACKGROUND UNDER CURSOR
+       FIND BACKGROUND UNDER CURSOR
     ========================================= */
 
     function getDrawingColor(x, y) {
 
-    let element = document.elementFromPoint(x, y);
-
-    while (
-        element &&
-        element !== document.documentElement
-    ) {
-
-        const background =
-            window.getComputedStyle(element).backgroundColor;
-
-        if (
-            background !== "transparent" &&
-            background !== "rgba(0, 0, 0, 0)"
-        ) {
-
-            const match = background.match(
-                /rgba?\((\d+),\s*(\d+),\s*(\d+)/
+        let element =
+            document.elementFromPoint(
+                x,
+                y
             );
 
-            if (match) {
+        while (
+            element &&
+            element !==
+            document.documentElement
+        ) {
 
-                const r = parseInt(match[1]);
-                const g = parseInt(match[2]);
-                const b = parseInt(match[3]);
+            const style =
+                window.getComputedStyle(
+                    element
+                );
 
-                /*
-                    Detect your dark red areas
-                    and similar dark backgrounds
-                */
+            const background =
+                style.backgroundColor;
 
-                const brightness =
-                    (r * 299 + g * 587 + b * 114) / 1000;
+            if (
+                background &&
+                background !==
+                    "transparent" &&
+                background !==
+                    "rgba(0, 0, 0, 0)"
+            ) {
 
-                if (brightness < 150) {
-                    return BEIGE;
+                const rgb =
+                    background.match(
+                        /rgba?\(\s*(\d+),\s*(\d+),\s*(\d+)/
+                    );
+
+                if (rgb) {
+
+                    const r =
+                        Number(rgb[1]);
+
+                    const g =
+                        Number(rgb[2]);
+
+                    const b =
+                        Number(rgb[3]);
+
+
+                    /*
+                        Compare to your brand red
+                        #9A3227
+                    */
+
+                    const redDifference =
+                        Math.abs(r - 154) +
+                        Math.abs(g - 50) +
+                        Math.abs(b - 39);
+
+
+                    /*
+                        Red-ish background
+                        -> beige pencil
+                    */
+
+                    if (
+                        redDifference < 80
+                    ) {
+                        return BEIGE;
+                    }
+
+
+                    /*
+                        Dark background
+                        -> beige pencil
+                    */
+
+                    const brightness =
+                        (
+                            r * 299 +
+                            g * 587 +
+                            b * 114
+                        ) / 1000;
+
+                    if (
+                        brightness < 140
+                    ) {
+                        return BEIGE;
+                    }
+
+
+                    /*
+                        Light background
+                        -> red pencil
+                    */
+
+                    return RED;
                 }
-
-                return RED;
             }
+
+            element =
+                element.parentElement;
         }
 
-        element = element.parentElement;
-    }
 
-    return RED;
+        return RED;
     }
 
 
     /* =========================================
-    STORE DRAWING POINTS
+       STORE TRAIL POINTS
     ========================================= */
 
     const trailPoints = [];
 
-    const trailLife = 1400;
+    /*
+        How long the line stays visible
+        in milliseconds
+    */
 
-    const minimumDistance = 4;
+    const trailLife =
+        1400;
+
+    /*
+        Ignore extremely tiny mouse
+        movements
+    */
+
+    const minimumDistance =
+        4;
 
     let lastX = null;
     let lastY = null;
 
 
     /* =========================================
-    TRACK CURSOR
+       TRACK CURSOR
     ========================================= */
 
     document.addEventListener(
         "mousemove",
         event => {
 
-            const x = event.clientX;
-            const y = event.clientY;
+            const x =
+                event.clientX;
+
+            const y =
+                event.clientY;
 
 
             if (
@@ -585,20 +696,20 @@ document.addEventListener("DOMContentLoaded", () => {
                         y - lastY
                     );
 
-
-                if (distance < minimumDistance) {
+                if (
+                    distance <
+                    minimumDistance
+                ) {
                     return;
                 }
             }
 
 
-            /*
-                Decide pencil color depending
-                on background.
-            */
-
             const color =
-                getDrawingColor(x, y);
+                getDrawingColor(
+                    x,
+                    y
+                );
 
 
             trailPoints.push({
@@ -615,8 +726,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* Stop connecting when cursor leaves */
-
     document.addEventListener(
         "mouseleave",
         () => {
@@ -629,14 +738,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-    DRAW + FADE
+       DRAW + FADE
     ========================================= */
 
     function drawTrail(currentTime) {
 
         /*
-            Fully clear every frame.
-            No grey leftovers.
+            Completely clear the canvas
+            every frame.
+
+            This prevents grey residue.
         */
 
         ctx.clearRect(
@@ -648,12 +759,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /*
-            Remove old points.
+            Remove expired points.
         */
 
         while (
             trailPoints.length &&
-            currentTime - trailPoints[0].time > trailLife
+            currentTime -
+                trailPoints[0].time >
+                trailLife
         ) {
 
             trailPoints.shift();
@@ -661,7 +774,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /*
-            Draw trail.
+            Draw trail segments.
         */
 
         for (
@@ -679,13 +792,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const distance =
                 Math.hypot(
-                    current.x - previous.x,
-                    current.y - previous.y
+                    current.x -
+                        previous.x,
+                    current.y -
+                        previous.y
                 );
 
 
             /*
-                Prevent giant lines if cursor jumps.
+                Don't connect giant jumps.
             */
 
             if (distance > 80) {
@@ -694,13 +809,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             const age =
-                currentTime - current.time;
+                currentTime -
+                current.time;
 
 
             const opacity =
                 Math.max(
                     0,
-                    1 - age / trailLife
+                    1 -
+                        age /
+                        trailLife
                 );
 
 
@@ -720,28 +838,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             /*
-                RED background = beige line
-                Other background = red line
+                Red/dark background
+                -> beige line
+
+                Light/beige background
+                -> red line
             */
 
-            if (current.color === BEIGE) {
+            if (
+                current.color === BEIGE
+            ) {
 
                 ctx.strokeStyle =
-                    `rgba(234, 192, 140, ${opacity})`;
+                    `rgba(
+                        234,
+                        192,
+                        140,
+                        ${opacity}
+                    )`;
 
             } else {
 
                 ctx.strokeStyle =
-                    `rgba(154, 50, 39, ${opacity})`;
-
+                    `rgba(
+                        154,
+                        50,
+                        39,
+                        ${opacity}
+                    )`;
             }
 
 
             ctx.lineWidth = 3;
 
-            ctx.lineCap = "round";
+            ctx.lineCap =
+                "round";
 
-            ctx.lineJoin = "round";
+            ctx.lineJoin =
+                "round";
 
             ctx.stroke();
         }
@@ -756,4 +890,5 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(
         drawTrail
     );
+
 });
