@@ -500,72 +500,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getDrawingColor(x, y) {
 
-        /*
-            Find whatever element is underneath
-            the cursor.
-        */
+    let element = document.elementFromPoint(x, y);
 
-        let element =
-            document.elementFromPoint(x, y);
+    while (
+        element &&
+        element !== document.documentElement
+    ) {
 
+        const background =
+            window.getComputedStyle(element).backgroundColor;
 
-        /*
-            Walk up through parents until we find
-            an actual background color.
-
-            This is important because a <p>, <h2>,
-            etc. usually has a transparent background,
-            while its parent section is red.
-        */
-
-        while (
-            element &&
-            element !== document.documentElement
+        if (
+            background !== "transparent" &&
+            background !== "rgba(0, 0, 0, 0)"
         ) {
 
-            const background =
-                window.getComputedStyle(element)
-                    .backgroundColor;
+            const match = background.match(
+                /rgba?\((\d+),\s*(\d+),\s*(\d+)/
+            );
 
+            if (match) {
 
-            /*
-                Your red:
-                #9A3227 = rgb(154, 50, 39)
-            */
+                const r = parseInt(match[1]);
+                const g = parseInt(match[2]);
+                const b = parseInt(match[3]);
 
-            if (
-                background === "rgb(154, 50, 39)" ||
-                background === "rgba(154, 50, 39, 1)"
-            ) {
+                /*
+                    Detect your dark red areas
+                    and similar dark backgrounds
+                */
 
-                return BEIGE;
-            }
+                const brightness =
+                    (r * 299 + g * 587 + b * 114) / 1000;
 
-
-            /*
-                If we've found a non-transparent
-                background that isn't red,
-                use the red pencil.
-            */
-
-            if (
-                background !== "transparent" &&
-                background !== "rgba(0, 0, 0, 0)"
-            ) {
+                if (brightness < 150) {
+                    return BEIGE;
+                }
 
                 return RED;
             }
-
-
-            element = element.parentElement;
         }
 
+        element = element.parentElement;
+    }
 
-        /*
-            Default color
-        */
-
-        return RED;
+    return RED;
     }
 
 
