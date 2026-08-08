@@ -433,4 +433,348 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+/* =========================================
+    CURSOR DRAWING CANVAS
+    ========================================= */
+
+    const drawingCanvas = document.createElement("canvas");
+
+    drawingCanvas.id = "drawing-canvas";
+
+    document.body.appendChild(drawingCanvas);
+
+    const ctx = drawingCanvas.getContext("2d");
+
+
+    /* =========================================
+    BRAND COLORS
+    ========================================= */
+
+    const RED = "#9A3227";
+    const BEIGE = "#eac08c";
+
+
+    /* =========================================
+    CANVAS SIZE
+    ========================================= */
+
+    function resizeDrawingCanvas() {
+
+        const dpr = window.devicePixelRatio || 1;
+
+        drawingCanvas.width =
+            window.innerWidth * dpr;
+
+        drawingCanvas.height =
+            window.innerHeight * dpr;
+
+        drawingCanvas.style.width =
+            `${window.innerWidth}px`;
+
+        drawingCanvas.style.height =
+            `${window.innerHeight}px`;
+
+        ctx.setTransform(
+            dpr,
+            0,
+            0,
+            dpr,
+            0,
+            0
+        );
+    }
+
+
+    resizeDrawingCanvas();
+
+
+    window.addEventListener(
+        "resize",
+        resizeDrawingCanvas
+    );
+
+
+    /* =========================================
+    FIND BACKGROUND UNDER CURSOR
+    ========================================= */
+
+    function getDrawingColor(x, y) {
+
+        /*
+            Find whatever element is underneath
+            the cursor.
+        */
+
+        let element =
+            document.elementFromPoint(x, y);
+
+
+        /*
+            Walk up through parents until we find
+            an actual background color.
+
+            This is important because a <p>, <h2>,
+            etc. usually has a transparent background,
+            while its parent section is red.
+        */
+
+        while (
+            element &&
+            element !== document.documentElement
+        ) {
+
+            const background =
+                window.getComputedStyle(element)
+                    .backgroundColor;
+
+
+            /*
+                Your red:
+                #9A3227 = rgb(154, 50, 39)
+            */
+
+            if (
+                background === "rgb(154, 50, 39)" ||
+                background === "rgba(154, 50, 39, 1)"
+            ) {
+
+                return BEIGE;
+            }
+
+
+            /*
+                If we've found a non-transparent
+                background that isn't red,
+                use the red pencil.
+            */
+
+            if (
+                background !== "transparent" &&
+                background !== "rgba(0, 0, 0, 0)"
+            ) {
+
+                return RED;
+            }
+
+
+            element = element.parentElement;
+        }
+
+
+        /*
+            Default color
+        */
+
+        return RED;
+    }
+
+
+    /* =========================================
+    STORE DRAWING POINTS
+    ========================================= */
+
+    const trailPoints = [];
+
+    const trailLife = 1400;
+
+    const minimumDistance = 4;
+
+    let lastX = null;
+    let lastY = null;
+
+
+    /* =========================================
+    TRACK CURSOR
+    ========================================= */
+
+    document.addEventListener(
+        "mousemove",
+        event => {
+
+            const x = event.clientX;
+            const y = event.clientY;
+
+
+            if (
+                lastX !== null &&
+                lastY !== null
+            ) {
+
+                const distance =
+                    Math.hypot(
+                        x - lastX,
+                        y - lastY
+                    );
+
+
+                if (distance < minimumDistance) {
+                    return;
+                }
+            }
+
+
+            /*
+                Decide pencil color depending
+                on background.
+            */
+
+            const color =
+                getDrawingColor(x, y);
+
+
+            trailPoints.push({
+                x: x,
+                y: y,
+                time: performance.now(),
+                color: color
+            });
+
+
+            lastX = x;
+            lastY = y;
+        }
+    );
+
+
+    /* Stop connecting when cursor leaves */
+
+    document.addEventListener(
+        "mouseleave",
+        () => {
+
+            lastX = null;
+            lastY = null;
+
+        }
+    );
+
+
+    /* =========================================
+    DRAW + FADE
+    ========================================= */
+
+    function drawTrail(currentTime) {
+
+        /*
+            Fully clear every frame.
+            No grey leftovers.
+        */
+
+        ctx.clearRect(
+            0,
+            0,
+            window.innerWidth,
+            window.innerHeight
+        );
+
+
+        /*
+            Remove old points.
+        */
+
+        while (
+            trailPoints.length &&
+            currentTime - trailPoints[0].time > trailLife
+        ) {
+
+            trailPoints.shift();
+        }
+
+
+        /*
+            Draw trail.
+        */
+
+        for (
+            let i = 1;
+            i < trailPoints.length;
+            i++
+        ) {
+
+            const previous =
+                trailPoints[i - 1];
+
+            const current =
+                trailPoints[i];
+
+
+            const distance =
+                Math.hypot(
+                    current.x - previous.x,
+                    current.y - previous.y
+                );
+
+
+            /*
+                Prevent giant lines if cursor jumps.
+            */
+
+            if (distance > 80) {
+                continue;
+            }
+
+
+            const age =
+                currentTime - current.time;
+
+
+            const opacity =
+                Math.max(
+                    0,
+                    1 - age / trailLife
+                );
+
+
+            ctx.beginPath();
+
+
+            ctx.moveTo(
+                previous.x,
+                previous.y
+            );
+
+
+            ctx.lineTo(
+                current.x,
+                current.y
+            );
+
+
+            /*
+                RED background = beige line
+                Other background = red line
+            */
+
+            if (current.color === BEIGE) {
+
+                ctx.strokeStyle =
+                    `rgba(234, 192, 140, ${opacity})`;
+
+            } else {
+
+                ctx.strokeStyle =
+                    `rgba(154, 50, 39, ${opacity})`;
+
+            }
+
+
+            ctx.lineWidth = 3;
+
+            ctx.lineCap = "round";
+
+            ctx.lineJoin = "round";
+
+            ctx.stroke();
+        }
+
+
+        requestAnimationFrame(
+            drawTrail
+        );
+    }
+
+
+    requestAnimationFrame(
+        drawTrail
+    );
 });
