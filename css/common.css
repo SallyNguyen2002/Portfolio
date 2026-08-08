@@ -345,7 +345,7 @@ footer {
 
 
 /* =========================================
-   GLOBAL SCROLL REVEAL
+   TEXT + BUTTON REVEAL
 ========================================= */
 
 .reveal {
@@ -355,10 +355,7 @@ footer {
     transition:
         opacity 0.8s ease,
         transform 0.8s ease;
-
-    transition-delay: var(--delay, 0s);
 }
-
 
 .reveal.active {
     opacity: 1;
@@ -366,40 +363,22 @@ footer {
 }
 
 
-/* Headings move slightly farther */
-
-h1.reveal,
-h2.reveal,
-h3.reveal,
-h4.reveal,
-h5.reveal,
-h6.reveal {
-    transform: translateY(45px);
-}
-
-
-h1.reveal.active,
-h2.reveal.active,
-h3.reveal.active,
-h4.reveal.active,
-h5.reveal.active,
-h6.reveal.active {
-    transform: translateY(0);
-}
-
-
 /* =========================================
-   REDUCED MOTION ACCESSIBILITY
+   IMAGE SCALE REVEAL
 ========================================= */
 
-@media (prefers-reduced-motion: reduce) {
+main img.reveal-image {
+    opacity: 0;
+    transform: scale(0.94);
 
-    .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
+    transition:
+        opacity 2s ease,
+        transform 2s ease;
+}
 
+main img.reveal-image.active {
+    opacity: 1;
+    transform: scale(1);
 }
 
 

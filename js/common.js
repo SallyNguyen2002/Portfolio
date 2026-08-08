@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const targetId = this.getAttribute("href");
 
-            // Ignore links that are only "#"
             if (!targetId || targetId === "#") return;
 
             const target = document.querySelector(targetId);
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const menu = document.getElementById("nav-menu");
     const menuIcon = document.querySelector(".menu-icon");
 
-    // Only run navigation code if all elements exist
     if (hamburger && menu && menuIcon) {
 
         const menuImage = menuIcon.dataset.menu;
@@ -55,8 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        /* Close menu after clicking a navigation link */
-
         menu.querySelectorAll("a").forEach(link => {
 
             link.addEventListener("click", () => {
@@ -75,8 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-
-        /* Reset navigation when returning to desktop */
 
         window.addEventListener("resize", () => {
 
@@ -239,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-    GLOBAL STAGGERED SCROLL REVEAL
+       TEXT + BUTTON STAGGER
     ========================================= */
 
     const revealElements = Array.from(
@@ -258,15 +252,27 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* Add hidden state to everything */
-
     revealElements.forEach(element => {
         element.classList.add("reveal");
     });
 
 
     /* =========================================
-    CHECK IF ELEMENT IS ON SCREEN
+       IMAGE SCALE REVEAL
+    ========================================= */
+
+    const revealImages = Array.from(
+        document.querySelectorAll("main img")
+    );
+
+
+    revealImages.forEach(image => {
+        image.classList.add("reveal-image");
+    });
+
+
+    /* =========================================
+       CHECK VIEWPORT
     ========================================= */
 
     function isVisible(element) {
@@ -281,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-    STAGGER FUNCTION
+       TEXT STAGGER FUNCTION
     ========================================= */
 
     function staggerElements(elements) {
@@ -291,12 +297,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const aRect = a.getBoundingClientRect();
             const bRect = b.getBoundingClientRect();
 
-            /* Top to bottom */
             if (Math.abs(aRect.top - bRect.top) > 10) {
                 return aRect.top - bRect.top;
             }
 
-            /* Left to right if same row */
             return aRect.left - bRect.left;
 
         });
@@ -311,29 +315,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }, index * 180);
 
         });
-
     }
 
 
     /* =========================================
-    INITIAL SCREEN
+       INITIAL TEXT
     ========================================= */
-
-    /*
-        Wait until browser has applied .reveal
-        before showing anything.
-    */
 
     requestAnimationFrame(() => {
 
         requestAnimationFrame(() => {
 
-            const initiallyVisible =
-                revealElements.filter(element =>
-                    isVisible(element)
-                );
+            const visibleText = revealElements.filter(
+                element => isVisible(element)
+            );
 
-            staggerElements(initiallyVisible);
+            staggerElements(visibleText);
 
         });
 
@@ -341,10 +338,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-    SCROLL REVEAL
+       TEXT SCROLL OBSERVER
     ========================================= */
 
-    const observer = new IntersectionObserver(
+    const textObserver = new IntersectionObserver(
         entries => {
 
             const newlyVisible = entries
@@ -358,36 +355,82 @@ document.addEventListener("DOMContentLoaded", () => {
             if (newlyVisible.length === 0) return;
 
 
-            /*
-                Reveal everything that entered
-                during this observer update
-            */
-
             staggerElements(newlyVisible);
 
 
             newlyVisible.forEach(element => {
-                observer.unobserve(element);
+                textObserver.unobserve(element);
             });
 
         },
-
         {
-            threshold: 0.1,
-            rootMargin: "0px 0px -5% 0px"
+            threshold: 0.1
+        }
+    );
+
+
+    revealElements.forEach(element => {
+
+        if (!isVisible(element)) {
+            textObserver.observe(element);
+        }
+
+    });
+
+
+    /* =========================================
+       IMAGE SCROLL OBSERVER
+    ========================================= */
+
+    const imageObserver = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("active");
+
+                    imageObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
         }
     );
 
 
     /* =========================================
-    OBSERVE BELOW-SCREEN ELEMENTS
+       INITIAL IMAGES + SCROLL IMAGES
     ========================================= */
 
-    revealElements.forEach(element => {
+    revealImages.forEach((image, index) => {
 
-        if (!isVisible(element)) {
-            observer.observe(element);
+        if (isVisible(image)) {
+
+            /*
+                Give browser time to render
+                the smaller/transparent image first.
+            */
+
+            setTimeout(() => {
+
+                image.classList.add("active");
+
+            }, 250 + (index * 120));
+
+        } else {
+
+            imageObserver.observe(image);
+
         }
 
     });
+
 });
