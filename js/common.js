@@ -123,5 +123,68 @@ document.addEventListener("DOMContentLoaded", () => {
     alertButton.onmouseout = function () {
         alertButton.innerText = "Learn More";
     };
+
+    const revealElements = document.querySelectorAll(
+        "section h1, section h2, section h3, section h4, section p, section .button"
+    );
+
+    /* Automatically add reveal class + delay */
+
+    revealElements.forEach((element, index) => {
+
+        element.classList.add("reveal");
+
+        /*
+            Find the section the element belongs to.
+            The stagger restarts for every section.
+        */
+
+        const section = element.closest("section");
+
+        if (section) {
+
+            const sectionElements = Array.from(
+                section.querySelectorAll("h1, h2, h3, h4, p, .button")
+            );
+
+            const position = sectionElements.indexOf(element);
+
+            element.style.setProperty(
+                "--delay",
+                `${position * 0.12}s`
+            );
+        }
+    });
+
+
+    /* Observe elements */
+
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("active");
+
+                    /* Only animate once */
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+    /* Start observing */
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+        revealObserver.observe(element);
+    });
 });
 

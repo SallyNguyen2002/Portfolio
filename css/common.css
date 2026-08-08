@@ -318,6 +318,52 @@ footer {
     font-size: 0.9em;
 }
 
+/* =================================
+   SCROLL REVEAL
+================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    transition-delay: var(--delay, 0s);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Optional: slightly stronger animation for headings */
+
+h1.reveal,
+h2.reveal,
+h3.reveal {
+    transform: translateY(45px);
+}
+
+h1.reveal.active,
+h2.reveal.active,
+h3.reveal.active {
+    transform: translateY(0);
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+}
 
 /* ==================================================
    TABLET AND MOBILE
